@@ -29,6 +29,8 @@ function preload() {
 function create() {
     //this.add.image(400, 300, 'sky');
 
+    gameState.cursors = this.input.keyboard.createCursorKeys();
+
 	var background = this.add.image(500, 500, 'background');
 	background.setScale(2.5);
 
@@ -42,8 +44,8 @@ function create() {
     gameState.player.setInteractive();
     gameState.wheel.setInteractive();
 
-    gameState.player.on('pointerdown', function () {
-        gameState.wheel.visible = true;
+    gameState.wheel.on('pointerdown', function () {
+        if
     })
 
     gameState.player.on('pointerdown', function () {
@@ -63,4 +65,8 @@ function create() {
 function update() {
     gameState.wheel.x = gameState.player.x + 50;
     gameState.wheel.y = gameState.player.y;
+
+    if (gameState.cursors.right.isDown) {
+        gameState.codey.x += 5;
+    }
 } 
