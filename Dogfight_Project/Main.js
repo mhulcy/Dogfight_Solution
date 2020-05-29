@@ -24,6 +24,7 @@ function preload() {
     this.load.image('cloud', 'images/anime-clouds-png-2-transparent.png');
 	this.load.image('wheel', 'images/wheel.png')
 	this.load.image('background', 'images/pixel land.png');
+	
 }
 
 function create() {
