@@ -45,13 +45,14 @@ function create() {
     gameState.player = this.add.sprite(500, 800, 'player');
     gameState.enemy1 = this.add.sprite(600, 100, 'enemy');
     gameState.enemy2 = this.add.sprite(400, 100, 'enemy');
-    gameState.wheel = this.add.sprite(0, 0, 'wheel');
-    gameState.wheel.setScale(.18);
-	gameState.wheel.visible = false;
 
 	gameState.cockpit = this.add.image(100, 900, 'cockpit');
 	gameState.cockpit.setScale(.85);
 	gameState.cockpit.visible = false;
+
+	gameState.wheel = this.add.sprite(75, 900, 'wheel');
+	gameState.wheel.setScale(.4);
+	gameState.wheel.visible = false;
 
 	gameState.throttle = this.add.image(140, 900, 'throttle');
 	gameState.throttle.setScale(.9);
@@ -71,7 +72,7 @@ function create() {
 		gameState.wheel.visible = true;
 		gameState.cockpit.visible = true;
 		gameState.throttle.visible = true;
-		gameState.throttle_button.visible = true
+		gameState.throttle_button.visible = true;
     })
     //var wheel = this.add.image(800, 800, 'wheel');
 
@@ -85,10 +86,5 @@ function create() {
 }
 
 function update() {
-    gameState.wheel.x = gameState.player.x + 50;
-    gameState.wheel.y = gameState.player.y;
-
-    if (gameState.cursors.right.isDown) {
-        gameState.codey.x += 5;
-    }
+    
 } 
