@@ -25,6 +25,8 @@ function preload() {
 	this.load.image('wheel', 'images/wheel.png')
 	this.load.image('background', 'images/pixel land.png');
 	this.load.image('cockpit', 'images/gray box.png');
+	this.load.image('throttle', 'images/smallbox.png');
+	this.load.image('throttle_button', 'images/throttlebutton.png');
 	
 }
 
@@ -36,6 +38,10 @@ function create() {
 	var background = this.add.image(500, 500, 'background');
 	background.setScale(2.5);
 
+	var cloud = this.add.image(250, 250, 'cloud');
+	var cloud = this.add.image(750, 650, 'cloud');
+	cloud.setScale(.5);
+
     gameState.player = this.add.sprite(500, 800, 'player');
     gameState.enemy1 = this.add.sprite(600, 100, 'enemy');
     gameState.enemy2 = this.add.sprite(400, 100, 'enemy');
@@ -46,6 +52,14 @@ function create() {
 	gameState.cockpit = this.add.image(100, 900, 'cockpit');
 	gameState.cockpit.setScale(.85);
 	gameState.cockpit.visible = false;
+
+	gameState.throttle = this.add.image(140, 900, 'throttle');
+	gameState.throttle.setScale(.9);
+	gameState.throttle.visible = false;
+
+	gameState.throttle_button = this.add.image(142.5, 930, 'throttle_button');
+	gameState.throttle_button.setScale(.4);
+	gameState.throttle_button.visible = false
     
     gameState.player.setInteractive();
     gameState.wheel.setInteractive();
@@ -56,10 +70,12 @@ function create() {
     gameState.player.on('pointerdown', function () {
 		gameState.wheel.visible = true;
 		gameState.cockpit.visible = true;
+		gameState.throttle.visible = true;
+		gameState.throttle_button.visible = true
     })
     //var wheel = this.add.image(800, 800, 'wheel');
 
-	this.add.image(500, 500, 'cloud');
+	
 
 
     gameState.enemy1.angle = 180
