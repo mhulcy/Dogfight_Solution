@@ -28,9 +28,18 @@ function preload() {
 function create() {
     //this.add.image(400, 300, 'sky');
 
-    gameState.player = this.add.image(500, 800, 'player');
-    gameState.enemy1 = this.add.image(600, 100, 'enemy');
-	gameState.enemy2 = this.add.image(400, 100, 'enemy');
+    gameState.player = this.add.sprite(500, 800, 'player');
+    gameState.enemy1 = this.add.sprite(600, 100, 'enemy');
+    gameState.enemy2 = this.add.sprite(400, 100, 'enemy');
+    gameState.wheel = this.add.sprite(0, 0, 'wheel');
+    gameState.wheel.setScale(.1);
+    gameState.wheel.visible = false;
+    
+    gameState.player.setInteractive();
+
+    gameState.player.on('pointerdown', function () {
+        gameState.wheel.visible = true;
+    })
     //var wheel = this.add.image(800, 800, 'wheel');
 
 	this.add.image(500, 500, 'cloud');
@@ -43,5 +52,6 @@ function create() {
 }
 
 function update() {
-
+    gameState.wheel.x = gameState.player.x + 50;
+    gameState.wheel.y = gameState.player.y;
 } 
