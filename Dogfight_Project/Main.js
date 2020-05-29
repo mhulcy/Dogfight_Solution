@@ -19,7 +19,8 @@ function preload() {
 
     //this.load.image('sky', 'assets/skies/space3.png');
     this.load.image('player', 'images/US_p40.png');
-    this.load.image('enemy', 'images/JAP_a6m.png'); //comment
+	this.load.image('enemy', 'images/JAP_a6m.png'); //comment
+	this.load.image('cloud', 'images/anime-clouds-png-2-transparent.png');
 }
 
 function create() {
@@ -27,7 +28,9 @@ function create() {
 
     var player = this.add.image(500, 800, 'player');
     var enemy1 = this.add.image(600, 100, 'enemy');
-    var enemy2 = this.add.image(400, 100, 'enemy');
+	var enemy2 = this.add.image(400, 100, 'enemy');
+
+	this.add.image(500, 500, 'cloud');
 
 
     enemy1.angle = 180
