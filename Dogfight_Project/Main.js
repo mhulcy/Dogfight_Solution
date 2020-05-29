@@ -24,6 +24,7 @@ function preload() {
     this.load.image('cloud', 'images/anime-clouds-png-2-transparent.png');
 	this.load.image('wheel', 'images/wheel.png')
 	this.load.image('background', 'images/pixel land.png');
+	this.load.image('cockpit', 'images/gray box.png');
 	
 }
 
@@ -40,7 +41,11 @@ function create() {
     gameState.enemy2 = this.add.sprite(400, 100, 'enemy');
     gameState.wheel = this.add.sprite(0, 0, 'wheel');
     gameState.wheel.setScale(.18);
-    gameState.wheel.visible = false;
+	gameState.wheel.visible = false;
+
+	gameState.cockpit = this.add.image(100, 900, 'cockpit');
+	gameState.cockpit.setScale(.85);
+	gameState.cockpit.visible = false;
     
     gameState.player.setInteractive();
     gameState.wheel.setInteractive();
@@ -49,7 +54,8 @@ function create() {
     })
 
     gameState.player.on('pointerdown', function () {
-        gameState.wheel.visible = true;
+		gameState.wheel.visible = true;
+		gameState.cockpit.visible = true;
     })
     //var wheel = this.add.image(800, 800, 'wheel');
 
