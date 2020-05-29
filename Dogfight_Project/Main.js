@@ -32,10 +32,15 @@ function create() {
     gameState.enemy1 = this.add.sprite(600, 100, 'enemy');
     gameState.enemy2 = this.add.sprite(400, 100, 'enemy');
     gameState.wheel = this.add.sprite(0, 0, 'wheel');
-    gameState.wheel.setScale(.1);
+    gameState.wheel.setScale(.18);
     gameState.wheel.visible = false;
     
     gameState.player.setInteractive();
+    gameState.wheel.setInteractive();
+
+    gameState.player.on('pointerdown', function () {
+        gameState.wheel.visible = true;
+    })
 
     gameState.player.on('pointerdown', function () {
         gameState.wheel.visible = true;
