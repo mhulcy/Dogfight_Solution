@@ -22,11 +22,15 @@ function preload() {
     this.load.image('player', 'images/US_p40.png');
 	this.load.image('enemy', 'images/JAP_a6m.png'); //comment
     this.load.image('cloud', 'images/anime-clouds-png-2-transparent.png');
-    this.load.image('wheel', 'images/wheel.png')
+	this.load.image('wheel', 'images/wheel.png')
+	this.load.image('background', 'images/pixel land.png');
 }
 
 function create() {
     //this.add.image(400, 300, 'sky');
+
+	var background = this.add.image(500, 500, 'background');
+	background.setScale(2.5);
 
     gameState.player = this.add.sprite(500, 800, 'player');
     gameState.enemy1 = this.add.sprite(600, 100, 'enemy');
