@@ -1,48 +1,38 @@
-﻿var config = {
+﻿
+var config = {
     type: Phaser.AUTO,
-    width: 800,
-    height: 600,
-    physics: {
-        default: 'arcade',
-        arcade: {
-            gravity: { y: 200 }
-        }
-    },
+    width: 1000,
+    height: 1000,
+    backgroundColor: "#039dfc",
     scene: {
         preload: preload,
         create: create,
         update: update
     }
+    
 };
 
 var game = new Phaser.Game(config);
 
 function preload() {
-    this.load.setBaseURL('http://labs.phaser.io');
+   // this.load.setBaseURL('http://labs.phaser.io');
 
-    this.load.image('sky', 'assets/skies/space3.png');
-    this.load.image('logo', 'assets/sprites/phaser3-logo.png');
-    this.load.image('red', 'assets/particles/red.png');
+    //this.load.image('sky', 'assets/skies/space3.png');
+    this.load.image('player', 'images/US_p40.png');
+    this.load.image('enemy', 'images/JAP_a6m.png');
 }
 
 function create() {
-    this.add.image(400, 300, 'sky');
+    //this.add.image(400, 300, 'sky');
 
-    var particles = this.add.particles('red');
+    var player = this.add.image(500, 800, 'player');
+    var enemy1 = this.add.image(600, 100, 'enemy');
+    var enemy2 = this.add.image(400, 100, 'enemy');
 
-    var emitter = particles.createEmitter({
-        speed: 100,
-        scale: { start: 1, end: 0 },
-        blendMode: 'ADD'
-    });
+    enemy1.angle = 180
+    enemy2.angle = 180
 
-    var logo = this.physics.add.image(400, 100, 'logo');
-
-    logo.setVelocity(100, 200);
-    logo.setBounce(1, 1);
-    logo.setCollideWorldBounds(true);
-
-    emitter.startFollow(logo);
+    
 }
 
 function update() {
