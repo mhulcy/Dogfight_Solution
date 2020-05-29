@@ -46,7 +46,6 @@ function create() {
     gameState.wheel.setInteractive();
 
     gameState.wheel.on('pointerdown', function () {
-        if
     })
 
     gameState.player.on('pointerdown', function () {
