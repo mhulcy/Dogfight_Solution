@@ -19,7 +19,7 @@ function preload() {
 
     //this.load.image('sky', 'assets/skies/space3.png');
     this.load.image('player', 'images/US_p40.png');
-    this.load.image('enemy', 'images/JAP_a6m.png');
+    this.load.image('enemy', 'images/JAP_a6m.png'); //comment
 }
 
 function create() {
