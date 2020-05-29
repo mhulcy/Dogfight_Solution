@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Dogfight_Project", "Dogfight_Project\", "{3C73CF5C-CEA7-496E-8E75-D8B59AF63AAE}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_61259"
+		Debug.AspNetCompiler.PhysicalPath = "Dogfight_Project\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_61259\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_61259"
+		Release.AspNetCompiler.PhysicalPath = "Dogfight_Project\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_61259\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "61259"
+		SlnRelativePath = "Dogfight_Project\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C73CF5C-CEA7-496E-8E75-D8B59AF63AAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C73CF5C-CEA7-496E-8E75-D8B59AF63AAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {603F98F1-447A-4CB0-AF33-65CBDDC3E09A}
+	EndGlobalSection
+EndGlobal
