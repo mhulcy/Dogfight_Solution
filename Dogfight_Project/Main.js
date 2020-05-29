@@ -29,6 +29,7 @@ function create() {
     var enemy1 = this.add.image(600, 100, 'enemy');
     var enemy2 = this.add.image(400, 100, 'enemy');
 
+
     enemy1.angle = 180
     enemy2.angle = 180
 
@@ -37,4 +38,4 @@ function create() {
 
 function update() {
 
-}
+} 
