@@ -22,11 +22,13 @@ function preload() {
     this.load.image('player', 'images/US_p40.png');
 	this.load.image('enemy', 'images/JAP_a6m.png'); //comment
     this.load.image('cloud', 'images/anime-clouds-png-2-transparent.png');
-    this.load.image('wheel', 'images/wheel.png')
+	this.load.image('wheel', 'images/wheel.png')
+	
 }
 
 function create() {
     //this.add.image(400, 300, 'sky');
+
 
     gameState.player = this.add.image(500, 800, 'player');
     gameState.enemy1 = this.add.image(600, 100, 'enemy');
