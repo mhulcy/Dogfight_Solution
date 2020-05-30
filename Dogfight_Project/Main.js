@@ -177,9 +177,7 @@ function create() {
 
 function update() {
 
-    if (gameState.wheel.setting = 1) {
-
-    }
+    
 
     if (gameState.wheel.angle < -54)
         gameState.wheel.setting = 1;
@@ -220,6 +218,9 @@ function update() {
             }
         }
     }
+
+
+
     }
 
 
