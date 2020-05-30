@@ -1,5 +1,6 @@
 ﻿const gameState = {}
 
+var t = player;
 var config = {
     type: Phaser.AUTO,
     width: 1000,
@@ -89,13 +90,12 @@ function create() {
     
 }
 
-function update() {
-    if (gameState.cursors.right.isDown) {
-        gameState.wheel.angle += 5;
-    }
 
-    if (gameState.cursors.left.isDown) {
-        gameState.wheel.angle -= 5;
-    }
+
+function update() {
+    t = GameManager(t);
+    gameState.enemy1.angle += 1;
+    gameState.enemy2.angle -= 1;
+    gameState.enemy1.y += 1;
+    gameState.enemy2.y += 1;
 } 
-    
