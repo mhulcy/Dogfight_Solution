@@ -1,13 +1,16 @@
 function setState(turn){
     switch(turn){
-        case player:
+        case 0:
             turn = bot1;
+            
             break;
-        case bot1:
+        case 1:
             turn = bot2;
+            
             break;
-        case bot2:
+        case 2:
             turn = player;
+            
             break;
     }
     return turn;

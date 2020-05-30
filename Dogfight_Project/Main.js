@@ -1,7 +1,5 @@
 ﻿
-
-
-
+var State = 0;
 const gameState = {}
 gameState.player1 = new Plane(10, 10, 10, 100, 50);
 gameState.player1.takeDamage(20);
@@ -114,7 +112,14 @@ function create() {
 }
 
 function update() {
-
+    
+    let d =  new Date;
+    var setTime = d.getSeconds(); 
+    var newTime = setTime;
+    console.log(setTime);
+    while(newTime - setTime < 750){
+        newTime = d.getSeconds();
+    }
     if (gameState.wheel.angle < -54)
         gameState.wheel.setting = 1;
     if (gameState.wheel.angle >= -54 && gameState.wheel.angle < -18)
@@ -154,6 +159,7 @@ function update() {
             }
         }
     }
-    }
+
+}
 
 
