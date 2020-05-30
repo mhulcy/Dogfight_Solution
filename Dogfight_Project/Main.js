@@ -37,8 +37,8 @@ function preload() {
     this.load.image('arrow_speed1_position3', 'images/Arrow_Speed1_Position3.png');
     this.load.image('arrow_speed2_position3', 'images/Arrow_Speed2_Position3.png');
     this.load.image('arrow_speed3_position3', 'images/Arrow_Speed3_Position3.png');
-    this.load.image('throttle_button1', 'images/throttlebutton1')
-    this.load.image('throttle_button2', 'images/throttlebutton2')
+    this.load.image('throttle_button1', 'images/throttlebutton1.png')
+    this.load.image('throttle_button2', 'images/throttlebutton2.png')
 
 }
 
@@ -147,20 +147,16 @@ function update() {
 
     if (gameState.cursors.down.isDown) {
         if(gameState.throttle_button.y < 925){
-            if(gameState.throttle_button.y = 895){
-                
-            }
+            gameState.throttle_button.y += 2
+        }
+    }  
+
+    if(gameState.cursors.up.isDown){
+        if(gameState.throttle_button.y > 865){ 
+            gameState.throttle_button.y -= 2  
         }
     }
 
-    if (gameState.cursors.up.isDown) {
-        if(gameState.throttle_button.y > 865){
-            if(gameState.throttle_button.y = 930){
-                gameState.throttle_button.visible = false
-                gameState.throttle_button1.visible = true
-            }
-        }
-    }
-    }
+     
 
-
+}
