@@ -1,8 +1,3 @@
-var t = player;
-while(true){
-    t = setState(t);
-}
-
 function setState(turn){
     switch(turn){
         case player:
