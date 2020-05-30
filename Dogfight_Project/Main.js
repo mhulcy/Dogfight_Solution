@@ -45,6 +45,10 @@ function create() {
     gameState.player = this.add.sprite(500, 800, 'player');
     gameState.enemy1 = this.add.sprite(600, 100, 'enemy');
     gameState.enemy2 = this.add.sprite(400, 100, 'enemy');
+    
+    gameState.player.setScale(2);
+    gameState.enemy1.setScale(2);
+    gameState.enemy2.setScale(2);
 
 	gameState.cockpit = this.add.image(100, 900, 'cockpit');
 	gameState.cockpit.setScale(.85);
@@ -86,5 +90,8 @@ function create() {
 }
 
 function update() {
-    
+    gameState.enemy1.angle += 1;
+    gameState.enemy2.angle -= 1;
+    gameState.enemy1.y += 1;
+    gameState.enemy2.y += 1;
 } 
