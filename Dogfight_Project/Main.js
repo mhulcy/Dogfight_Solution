@@ -61,8 +61,8 @@ function create() {
 	gameState.cockpit.setScale(.85);
 	gameState.cockpit.visible = false;
 
-	gameState.wheel = this.add.sprite(75, 900, 'wheel');
-	gameState.wheel.setScale(.4);
+	gameState.wheel = this.add.sprite(75, 895, 'wheel');
+	gameState.wheel.setScale(.25);
 	gameState.wheel.visible = false;
 
 	gameState.throttle = this.add.image(140, 900, 'throttle');
@@ -93,15 +93,33 @@ function create() {
     gameState.enemy1.angle = 180
     gameState.enemy2.angle = 180
 
+<<<<<<< HEAD
+=======
+    //setting for direction of move
+    gameState.wheel.setting = 3;
+>>>>>>> 886ea6bb6ce4d5180e9118ccded262b371d7207a
 }
 
 function update() {
     if (gameState.cursors.right.isDown) {
-        gameState.wheel.angle += 5;
+        if (gameState.wheel.angle < 90)
+            gameState.wheel.angle += 2;
     }
 
     if (gameState.cursors.left.isDown) {
-        gameState.wheel.angle -= 5;
+        if (gameState.wheel.angle > -90)
+            gameState.wheel.angle -= 2;
+    }
+
+
+    if (gameState.cursors.down.isDown) {
+        if(gameState.throttle_button.y < 925)
+        gameState.throttle_button.y += 8;
+    }
+
+    if (gameState.cursors.up.isDown) {
+        if(gameState.throttle_button.y > 865)
+        gameState.throttle_button.y -= 8;
     }
     }
 
