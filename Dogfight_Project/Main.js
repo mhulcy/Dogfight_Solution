@@ -1,7 +1,5 @@
 ﻿
-
-
-
+var State = 0;
 const gameState = {}
 gameState.player1 = new Plane(10, 10, 10, 100, 50);
 gameState.player1.takeDamage(20);
@@ -186,11 +184,22 @@ function create() {
 }
 
 function update() {
+<<<<<<< HEAD
+    
+    let d =  new Date;
+    var setTime = d.getSeconds(); 
+    var newTime = setTime;
+    console.log(setTime);
+    while(newTime - setTime < 750){
+        newTime = d.getSeconds();
+    }
+=======
 
     if (gameState.wheel.setting = 1) {
 
     }
 
+>>>>>>> 8b343e642210b1207e6e59e59f66becc28e1fb1d
     if (gameState.wheel.angle < -54)
         gameState.wheel.setting = 1;
     if (gameState.wheel.angle >= -54 && gameState.wheel.angle < -18)
@@ -227,12 +236,17 @@ function update() {
     if(gameState.throttle_button.y < 885){
         gameState.throttle.setting = 1
     }
+<<<<<<< HEAD
     if(gameState.throttle_button.y >= 885 && gameState.throttle_button.y < 905){
         gameState.throttle.setting = 2
     }
     if(gameState.throttle_button.y >= 905){
         gameState.throttle.setting = 3
     }
+=======
+
+}
+>>>>>>> d312e8f64be19a899ff8148c275a81d2a85ebc28
 
 
 }
