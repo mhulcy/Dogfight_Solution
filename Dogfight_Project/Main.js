@@ -173,6 +173,7 @@ function create() {
 }
 
 function update() {
+<<<<<<< HEAD
 if(increment === 0){
   gameState.player1.move(2,4);
   increment +=1;
@@ -180,6 +181,10 @@ if(increment === 0){
     if (gameState.wheel.setting = 1) {
 
     }
+=======
+
+    
+>>>>>>> fa2335ad777b43c90e936ba9e2b16c8d35b88a34
 
     if (gameState.wheel.angle < -54)
         gameState.wheel.setting = 1;
@@ -202,24 +207,27 @@ if(increment === 0){
             gameState.wheel.angle -= 2;
     }
 
-
     if (gameState.cursors.down.isDown) {
         if(gameState.throttle_button.y < 925){
-            if(gameState.throttle_button.y = 895){
-                gameState.throttle_button = this.add.image(142.5, 930, 'throttle_button');
-                gameState.throttle_button.setScale(.4)
-            }
+            gameState.throttle_button.y += 2
+        }
+    }  
+    if(gameState.cursors.up.isDown){
+        if(gameState.throttle_button.y > 865){ 
+            gameState.throttle_button.y -= 2  
         }
     }
 
-    if (gameState.cursors.up.isDown) {
-        if(gameState.throttle_button.y > 865){
-            if(gameState.throttle_button.y = 930){
-                gameState.throttle_button = this.add.image(142.5, 895, 'throttle_button');
-                gameState.throttle_button.setScale(.4)
-            }
-        }
+    if(gameState.throttle_button.y > 905){
+        gameState.throttle.setting = 1
     }
+    if(gameState.throttle_button.y <= 905 && gameState.throttle_button.y >= 885){
+        gameState.throttle.setting = 2
     }
+    if(gameState.throttle_button.y < 885){
+        gameState.throttle.setting = 3
 
 
+    }
+
+}
