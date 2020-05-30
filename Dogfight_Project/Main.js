@@ -90,8 +90,12 @@ function create() {
 }
 
 function update() {
-    gameState.enemy1.angle += 1;
-    gameState.enemy2.angle -= 1;
-    gameState.enemy1.y += 1;
-    gameState.enemy2.y += 1;
+    if (gameState.cursors.right.isDown) {
+        gameState.wheel.angle += 5;
+    }
+
+    if (gameState.cursors.left.isDown) {
+        gameState.wheel.angle -= 5;
+    }
 } 
+    
