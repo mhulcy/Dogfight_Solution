@@ -91,6 +91,17 @@ function create() {
 }
 
 function update() {
+
+    if (gameState.wheel.angle < -54)
+        gameState.wheel.setting = 1;
+    if (gameState.wheel.angle >= -54 && gameState.wheel.angle < -18)
+        gameState.wheel.setting = 2;
+    if (gameState.wheel.angle >= -18 && gameState.wheel.angle < 18)
+        gameState.wheel.setting = 3;
+    if (gameState.wheel.angle >= 18 && gameState.wheel.angle < 54)
+        gameState.wheel.setting = 4;
+    if (gameState.wheel.angle > 54)
+        gameState.wheel.setting = 5;
     
     if (gameState.cursors.right.isDown) {
         if (gameState.wheel.angle < 90)
