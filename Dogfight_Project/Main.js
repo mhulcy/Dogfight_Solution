@@ -137,7 +137,6 @@ function update() {
                 gameState.throttle_button.setScale(.4)
             }
         }
-
     }
 
     if (gameState.cursors.up.isDown) {
