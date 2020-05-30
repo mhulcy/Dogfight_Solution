@@ -34,7 +34,9 @@ function preload() {
 	this.load.image('cockpit', 'images/gray box.png');
 	this.load.image('throttle', 'images/smallbox.png');
 	this.load.image('throttle_button', 'images/throttlebutton.png');
-	
+    this.load.image('arrow_speed1_position3', 'images/Arrow_Speed1_Position3.png');
+    this.load.image('arrow_speed2_position3', 'images/Arrow_Speed2_Position3.png');
+    this.load.image('arrow_speed3_position3', 'images/Arrow_Speed3_Position3.png');
 }
 
 function create() {
@@ -52,6 +54,11 @@ function create() {
     gameState.player = this.add.sprite(500, 800, 'player');
     gameState.enemy1 = this.add.sprite(600, 100, 'enemy');
     gameState.enemy2 = this.add.sprite(400, 100, 'enemy');
+
+    gameState.arrow1 = this.add.image(535, 770, 'arrow_speed1_position3');
+    gaemState.arrow1.setScale(4);
+    //var arrow2 = this.add.image(535, 770, 'arrow_speed2_position3');
+    //arrow2.setScale(4);
     
     gameState.player.setScale(2);
     gameState.enemy1.setScale(2);
@@ -93,11 +100,10 @@ function create() {
     gameState.enemy1.angle = 180
     gameState.enemy2.angle = 180
 
-<<<<<<< HEAD
-=======
+
     //setting for direction of move
     gameState.wheel.setting = 3;
->>>>>>> 886ea6bb6ce4d5180e9118ccded262b371d7207a
+
 }
 
 function update() {
