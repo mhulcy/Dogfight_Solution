@@ -26,6 +26,8 @@ function preload() {
    // this.load.setBaseURL('http://labs.phaser.io');
 
     //this.load.image('sky', 'assets/skies/space3.png');
+
+    this.load.audio('Retro', 'images/2019-01-02_-_8_Bit_Menu_-_David_Renda_-_FesliyanStudios.com.mp3');
     this.load.image('player', 'images/US_p40.png');
 	this.load.image('enemy', 'images/JAP_a6m.png'); //comment
     this.load.image('cloud', 'images/anime-clouds-png-2-transparent.png');
@@ -46,6 +48,9 @@ function create() {
 
 	var background = this.add.image(500, 500, 'background');
 	background.setScale(2.5);
+
+    //var sfx = this.add.sound('Retro');
+    //sfx.play();
 
 	var cloud = this.add.image(250, 250, 'cloud');
 	var cloud = this.add.image(750, 650, 'cloud');
