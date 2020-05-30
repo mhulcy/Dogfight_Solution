@@ -200,27 +200,27 @@ function update() {
             gameState.wheel.angle -= 2;
     }
 
-
     if (gameState.cursors.down.isDown) {
         if(gameState.throttle_button.y < 925){
-            if(gameState.throttle_button.y = 895){
-                gameState.throttle_button = this.add.image(142.5, 930, 'throttle_button');
-                gameState.throttle_button.setScale(.4)
-            }
+            gameState.throttle_button.y += 2
+        }
+    }  
+    if(gameState.cursors.up.isDown){
+        if(gameState.throttle_button.y > 865){ 
+            gameState.throttle_button.y -= 2  
         }
     }
 
-    if (gameState.cursors.up.isDown) {
-        if(gameState.throttle_button.y > 865){
-            if(gameState.throttle_button.y = 930){
-                gameState.throttle_button = this.add.image(142.5, 895, 'throttle_button');
-                gameState.throttle_button.setScale(.4)
-            }
-        }
+    if(gameState.throttle_button.y > 905){
+        gameState.throttle.setting = 1
+    }
+    if(gameState.throttle_button.y <= 905 && gameState.throttle_button.y >= 885){
+        gameState.throttle.setting = 2
+    }
+    if(gameState.throttle_button.y < 885){
+        gameState.throttle.setting = 3
+
+
     }
 
-
-
-    }
-
-
+}
