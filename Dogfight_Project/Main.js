@@ -1,4 +1,11 @@
-﻿const gameState = {}
+﻿
+
+
+
+const gameState = {}
+gameState.player1 = new Plane(10, 10, 10, 100, 50);
+gameState.player1.takeDamage(20);
+console.log(gameState.player1.health);
 
 var config = {
     type: Phaser.AUTO,
@@ -86,7 +93,6 @@ function create() {
     gameState.enemy1.angle = 180
     gameState.enemy2.angle = 180
 
-    
 }
 
 function update() {
@@ -97,5 +103,6 @@ function update() {
     if (gameState.cursors.left.isDown) {
         gameState.wheel.angle -= 5;
     }
-} 
-    
+    }
+
+
