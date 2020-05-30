@@ -1,11 +1,8 @@
 ﻿
 
 
-
+let increment = 0;
 const gameState = {}
-gameState.player1 = new Plane(10, 10, 10, 100, 50);
-gameState.player1.takeDamage(20);
-console.log(gameState.player1.health);
 
 var config = {
     type: Phaser.AUTO,
@@ -31,7 +28,7 @@ function preload() {
     this.load.image('player', 'images/US_p40.png');
 	this.load.image('enemy', 'images/JAP_a6m.png'); //comment
     this.load.image('cloud', 'images/anime-clouds-png-2-transparent.png');
-	this.load.image('wheel', 'images/wheel.png')
+	this.load.image('wheel', 'images/wheel.png');
 	this.load.image('background', 'images/pixel land.png');
 	this.load.image('cockpit', 'images/gray box.png');
 	this.load.image('throttle', 'images/smallbox.png');
@@ -68,6 +65,7 @@ function create() {
 	var cloud = this.add.image(750, 650, 'cloud');
 	cloud.setScale(.5);
 
+    gameState.player1 = new Plane(500, 800, 0, 100, 20);
     gameState.player = this.add.sprite(500, 800, 'player');
     gameState.enemy1 = this.add.sprite(600, 100, 'enemy');
     gameState.enemy2 = this.add.sprite(400, 100, 'enemy');
@@ -128,7 +126,6 @@ function create() {
     gameState.arrow3_1.visible = false;
 
     
-    
     gameState.player.setScale(2);
     gameState.enemy1.setScale(2);
     gameState.enemy2.setScale(2);
@@ -174,8 +171,18 @@ function create() {
 }
 
 function update() {
+<<<<<<< HEAD
+if(increment === 0){
+  gameState.player1.move(2,4);
+  increment +=1;
+}
+    if (gameState.wheel.setting = 1) {
+
+    }
+=======
 
     
+>>>>>>> fa2335ad777b43c90e936ba9e2b16c8d35b88a34
 
     if (gameState.wheel.angle < -54)
         gameState.wheel.setting = 1;
