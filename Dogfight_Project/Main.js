@@ -39,11 +39,6 @@ function preload() {
     this.load.image('arrow_speed1_position3', 'images/Arrow_Speed1_Position3.png');
     this.load.image('arrow_speed2_position3', 'images/Arrow_Speed2_Position3.png');
     this.load.image('arrow_speed3_position3', 'images/Arrow_Speed3_Position3.png');
-<<<<<<< HEAD
-    this.load.image('throttle_button1', 'images/throttlebutton1.png')
-    this.load.image('throttle_button2', 'images/throttlebutton2.png')
-
-=======
     this.load.image('arrow_speed1_position2', 'images/Arrow_Speed1_Position2.png');
     this.load.image('arrow_speed2_position2', 'images/Arrow_Speed2_Position2.png');
     this.load.image('arrow_speed3_position2', 'images/Arrow_Speed3_Position2.png');
@@ -56,7 +51,6 @@ function preload() {
     this.load.image('arrow_speed1_position5', 'images/Arrow_Speed1_Position5.png');
     this.load.image('arrow_speed2_position5', 'images/Arrow_Speed2_Position5.png');
     this.load.image('arrow_speed3_position5', 'images/Arrow_Speed3_Position5.png');
->>>>>>> 8b343e642210b1207e6e59e59f66becc28e1fb1d
 }
 
 function create() {
@@ -224,13 +218,21 @@ function update() {
             gameState.throttle_button.y += 2
         }
     }  
-
     if(gameState.cursors.up.isDown){
         if(gameState.throttle_button.y > 865){ 
             gameState.throttle_button.y -= 2  
         }
     }
 
-     
+    if(gameState.throttle_button.y < 885){
+        gameState.throttle.setting = 1
+    }
+    if(gameState.throttle_button.y >= 885 && gameState.throttle_button.y < 905){
+        gameState.throttle.setting = 2
+    }
+    if(gameState.throttle_button.y >= 905){
+        gameState.throttle.setting = 3
+    }
+
 
 }
