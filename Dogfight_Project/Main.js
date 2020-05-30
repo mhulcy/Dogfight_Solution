@@ -81,10 +81,16 @@ function create() {
 
     gameState.enemy1.angle = 180
     gameState.enemy2.angle = 180
-
+    //gameState.wheel.anchor.setTo(0.5, 0.5);
     
 }
 
 function update() {
-    
+    if (gameState.cursors.right.isDown) {
+        gameState.wheel.angle += 1;
+    }
+
+    if (gameState.cursors.left.isDown) {
+        gameState.wheel.angle -= 1;
+    }
 } 
