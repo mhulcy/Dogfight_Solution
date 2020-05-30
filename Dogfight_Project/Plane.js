@@ -10,7 +10,7 @@ class Plane{
        takeDamage(damageReceived){
            this.health -= damageReceived;
     }
-
+    
 
 
 }
