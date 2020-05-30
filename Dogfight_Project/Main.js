@@ -101,5 +101,16 @@ function update() {
         if (gameState.wheel.angle > -90)
             gameState.wheel.angle -= 2;
     }
+
+
+    if (gameState.cursors.down.isDown) {
+        if(gameState.throttle_button.y < 925)
+        gameState.throttle_button.y += 8;
+    }
+
+    if (gameState.cursors.up.isDown) {
+        if(gameState.throttle_button.y > 865)
+        gameState.throttle_button.y -= 8;
+    }
 } 
     
