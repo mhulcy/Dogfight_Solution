@@ -91,6 +91,7 @@ function create() {
 }
 
 function update() {
+    
     if (gameState.cursors.right.isDown) {
         if (gameState.wheel.angle < 90)
             gameState.wheel.angle += 2;
