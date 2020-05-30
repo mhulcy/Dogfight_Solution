@@ -56,8 +56,10 @@ function create() {
     gameState.enemy2 = this.add.sprite(400, 100, 'enemy');
 
     gameState.arrow1 = this.add.image(535, 770, 'arrow_speed1_position3');
-    gaemState.arrow1.setScale(4);
-    //var arrow2 = this.add.image(535, 770, 'arrow_speed2_position3');
+    gameState.arrow1.setScale(4);
+    gameState.arrow2 = this.add.image(535, 770, 'arrow_speed2_position3');
+    gameState.arrow2.setScale(4);
+
     //arrow2.setScale(4);
     
     gameState.player.setScale(2);
