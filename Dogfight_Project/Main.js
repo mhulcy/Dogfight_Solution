@@ -17,6 +17,9 @@ var config = {
     
 };
 
+var State = 0;
+var stillTurn = true;
+var gameOver = false;
 var game = new Phaser.Game(config);
 
 function preload() {
@@ -29,6 +32,7 @@ function preload() {
 	this.load.image('enemy', 'images/JAP_a6m.png'); //comment
     this.load.image('cloud', 'images/anime-clouds-png-2-transparent.png');
     this.load.image('cloud1', 'images/anime-clouds-png-2-transparent.png');
+    this.load.image('cloud2', 'images/anime-clouds-png-2-transparent.png');
 	this.load.image('wheel', 'images/wheel.png');
 	this.load.image('background', 'images/pixel land.png');
 	this.load.image('cockpit', 'images/gray box.png');
@@ -63,9 +67,11 @@ function create() {
     //sfx.play();
     
 	gameState.cloud = this.add.image(250, 250, 'cloud');
-	gameState.cloud1 = this.add.image(750, 650, 'cloud');
+    gameState.cloud1 = this.add.image(750, 650, 'cloud');
+    gameState.cloud2 = this.add.image(100, 850, 'cloud');
 	gameState.cloud.setScale(.5);
     gameState.cloud1.setScale(.5);
+    gameState.cloud2.setScale(.5);
   
     gameState.player = this.add.sprite(500, 800, 'player');
     gameState.player_back = new Plane(500, 800, 0, 100, 20);
@@ -180,7 +186,42 @@ function update() {
         ++ increment;
     }
 
-    console.log(gameState.wheelSetting)
+    switch(State){
+        case 0:    
+            while(!stillTurn  && !gameOver){
+                //if(!Plane.isStillTurn()){
+                    
+                //}
+                Plane;
+            }
+            //console.log('player');
+            State = 1;
+            break;
+        case 1:
+            while(!stillTurn && !gameOver){
+                //if(!Bot1.isStillTurn()){
+
+                //}
+                Plane;
+            }
+            //console.log('bot1');
+            State = 2;
+            break;
+        case 2:
+            while(!stillTurn && !gameOver){
+                //if(!Bot2.isStillTurn()){
+
+                //}
+                Plane;
+            }
+            //console.log('bot2');
+            State = 0;
+            break;
+    }
+
+    if(gameOver){
+        
+    }
 
     if (gameState.wheel.angle < -54)
         gameState.wheelSetting = 1;
@@ -236,6 +277,13 @@ function update() {
     }else{
         gameState.cloud1.y = Math.random() * 1000;
         gameState.cloud1.x = 1150;
+    }
+
+    if(gameState.cloud2.x >= -150){
+        gameState.cloud2.x -= 0.3;
+    }else{
+        gameState.cloud2.y = Math.random() * 1000;
+        gameState.cloud2.x = 1150;
     }
 
     if (gameState.wheelSetting === 1) {
