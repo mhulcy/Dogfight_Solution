@@ -500,10 +500,13 @@ function update() {
 
     //arrow position 2
     gameState.arrow1_2.x = gameState.player.x; 
-    gameState.arrow1_2.y = gameState.player.y - 45;
+    gameState.arrow1_2.y = gameState.player.y - 85;
 
     gameState.arrow2_2.x = gameState.player.x;
-    gameState.arrow2_2.y = gameState.player.y - 60;
+    gameState.arrow2_2.y = gameState.player.y - 100;
+
+    gameState.arrow3_2.x = gameState.player.x;
+    gameState.arrow3_2.y = gameState.player.y - 115;
     
     //arrow position 3
     gameState.arrow1_3.x = gameState.player.x 
