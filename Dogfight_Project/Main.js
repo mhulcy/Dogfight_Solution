@@ -99,63 +99,9 @@ function create() {
     gameState.enemy2_back = new botA(400, 100, 180, 100, 20);
 
 
-    //arrows position 3
-    gameState.arrow1_3 = this.add.image(535, 770, 'arrow_speed1_position3');
-    gameState.arrow1_3.setScale(.4);
-    gameState.player.list[2] = false;
-    gameState.arrow2_3 = this.add.image(535, 770, 'arrow_speed2_position3');
-    gameState.arrow2_3.setScale(.4);
-    gameState.player.list[3] = false;
-    gameState.arrow3_3 = this.add.image(535, 770, 'arrow_speed3_position3');
-    gameState.arrow3_3.setScale(.4);
-    gameState.player.list[4] = false;
-
-    //arrows position 2
-    gameState.arrow1_2 = this.add.image(535, 770, 'arrow_speed1_position2');
-    gameState.arrow1_2.setScale(.4);
-    gameState.player.list[5] = false;
-    gameState.arrow2_2 = this.add.image(535, 770, 'arrow_speed2_position2');
-    gameState.arrow2_2.setScale(.4);
-    gameState.player.list[6] = false;
-    gameState.arrow3_2 = this.add.image(535, 770, 'arrow_speed3_position2');
-    gameState.arrow3_2.setScale(.4);
-    gameState.player.list[7] = false;
-
-    //arrows position 4
-    gameState.arrow1_4 = this.add.image(468, 770, 'arrow_speed1_position4');
-    gameState.arrow1_4.setScale(.4);
-    gameState.arrow1_4.visible = false;
-    gameState.arrow2_4 = this.add.image(468, 770, 'arrow_speed2_position4');
-    gameState.arrow2_4.setScale(.4);
-    gameState.arrow2_4.visible = false;
-    gameState.arrow3_4 = this.add.image(468, 770, 'arrow_speed3_position4');
-    gameState.arrow3_4.setScale(.4);
-    gameState.arrow3_4.visible = false;
-
-    //arrows position 5
-    gameState.arrow1_5 = this.add.image(535, 770, 'arrow_speed1_position5');
-    gameState.arrow1_5.setScale(4);
-    gameState.arrow1_5.visible = false;
-    gameState.arrow2_5 = this.add.image(535, 770, 'arrow_speed2_position5');
-    gameState.arrow2_5.setScale(4);
-    gameState.arrow2_5.visible = false;
-    gameState.arrow3_5 = this.add.image(535, 770, 'arrow_speed3_position5');
-    gameState.arrow3_5.setScale(4);
-    gameState.arrow3_5.visible = true;
-
-    //arrows position 1
-    gameState.arrow1_1 = this.add.image(468, 770, 'arrow_speed1_position1');
-    gameState.arrow1_1.setScale(4);
-    gameState.player.list[1] = false;
-    gameState.arrow2_1 = this.add.image(468, 770, 'arrow_speed2_position1');
-    gameState.arrow2_1.setScale(4);
-    gameState.player.list[3] = false;
-    gameState.arrow3_1 = this.add.image(468, 770, 'arrow_speed3_position1');
-    gameState.arrow3_1.setScale(4);
-    gameState.player.list[4] = false;
 
     
-    gameState.player.setScale(2);
+   // gameState.player.setScale(2);
     gameState.enemy1.setScale(2);
     gameState.enemy2.setScale(2);
 
@@ -310,6 +256,7 @@ function update() {
         gameState.cloud2.x = 1150;
     }
 
+    
     if (gameState.wheelSetting === 1) {
         if (gameState.throttleSetting === 1) {
             gameState.player.list[2] = true;
@@ -577,68 +524,6 @@ function update() {
     }
     
 
-    //arrow position 1
-    gameState.arrow1_1.x = gameState.player.x + 30;
-    gameState.arrow1_1.y = gameState.player.y - 20;
-    gameState.arrow1_1.angle = gameState.player.angle;
-
-    gameState.arrow2_1.x = gameState.player.x + 30;
-    gameState.arrow2_1.y = gameState.player.y - 35;
-    gameState.arrow2_1.angle = gameState.player.angle;
-
-    gameState.arrow3_1.x = gameState.player.x + 30;
-    gameState.arrow3_1.y = gameState.player.y - 50;
-    gameState.arrow3_1.angle = gameState.player.angle;
-
-    //arrow position 2
-    gameState.arrow1_2.x = gameState.player.x; 
-    gameState.arrow1_2.y = gameState.player.y - 85;
-    gameState.arrow1_2.angle = gameState.player.angle;
-
-    gameState.arrow2_2.x = gameState.player.x;
-    gameState.arrow2_2.y = gameState.player.y - 100;
-    gameState.arrow2_2.angle = gameState.player.angle;
-
-    gameState.arrow3_2.x = gameState.player.x;
-    gameState.arrow3_2.y = gameState.player.y - 115;
-    gameState.arrow3_2.angle = gameState.player.angle;
     
-    //arrow position 3
-    gameState.arrow1_3.x = gameState.player.x 
-    gameState.arrow1_3.y = gameState.player.y - 85
-    gameState.arrow1_3.angle = gameState.player.angle;
-
-    gameState.arrow2_3.x = gameState.player.x
-    gameState.arrow2_3.y = gameState.player.y - 100
-    gameState.arrow2_3.angle = gameState.player.angle;
-
-    gameState.arrow3_3.x = gameState.player.x
-    gameState.arrow3_3.y = gameState.player.y - 115
-    gameState.arrow3_3.angle = gameState.player.angle;
-
-    //arrow position 4
-    gameState.arrow1_4.x = gameState.player.x 
-    gameState.arrow1_4.y = gameState.player.y - 85
-    gameState.arrow1_4.angle = gameState.player.angle;
-
-    gameState.arrow2_4.x = gameState.player.x
-    gameState.arrow2_4.y = gameState.player.y - 100
-    gameState.arrow2_4.angle = gameState.player.angle;
-
-    gameState.arrow3_4.x = gameState.player.x
-    gameState.arrow3_4.y = gameState.player.y - 115
-    gameState.arrow3_4.angle = gameState.player.angle;
-
-    //arrow position 5
-    gameState.arrow1_5.x = gameState.player.x - 30
-    gameState.arrow1_5.y = gameState.player.y - 20
-    gameState.arrow1_5.angle = gameState.player.angle;
-
-    gameState.arrow2_5.x = gameState.player.x - 30
-    gameState.arrow2_5.y = gameState.player.y - 35
-    gameState.arrow2_5.angle = gameState.player.angle;
-
-    gameState.arrow3_5.x = gameState.player.x - 30
-    gameState.arrow3_5.y = gameState.player.y - 50
-    gameState.arrow3_5.angle = gameState.player.angle;
 }
+
