@@ -500,76 +500,9 @@ function update() {
     gameState.arrow1_2.y = gameState.player.y - 45;
 
     gameState.arrow2_2.x = gameState.player.x;
-    gameState.arrow2_2.y = gameState.player.y - 60;
-
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-
-
+    gameState.arrow2_2.y = gameState.player.y - 60;   
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    //Arrow position 3
     gameState.arrow1_3.x = gameState.player.x 
     gameState.arrow1_3.y = gameState.player.y - 45
 
@@ -596,8 +529,4 @@ function update() {
 
     gameState.arrow3_5.x = gameState.player.x - 30
     gameState.arrow3_5.y = gameState.player.y - 50
-=======
-    gameState.arrow3_2.x = gameState.player.x;
-    gameState.arrow3_2.y = gameState.player.y - 75;
->>>>>>> 28d7c9e742db4d83121d823f25ee737f03b41bd3
 }
