@@ -19,7 +19,6 @@ class bot{
         if(wheelSetting === 3){angularMomentum = 0;}
         if(wheelSetting === 4){angularMomentum =4.5;}
         if(wheelSetting === 5){angularMomentum =9;}
-        console.log('ran');
         
 
         var i = 0;                   
