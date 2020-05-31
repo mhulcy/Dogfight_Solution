@@ -6,9 +6,12 @@ function StateMachine(State){
     switch(State){
     case 0: 
         //playerValues = gameState.player_back.isStillTurn();
-        if (gameState.cursors.space.isDown) {
-            State = 1;
-        }
+
+            if (Phaser.Input.Keyboard.JustDown(gameState.spacebar)) {
+                State = 1;
+            }
+            
+        
         break;
     case 1:
         bot1Values = gameState.enemy1_back.isStillTurn();
