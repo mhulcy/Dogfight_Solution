@@ -9,9 +9,10 @@ class bot{
     }
     takeDamage(amount){
         this.health -= amount;
-        gameState.takeDamage.x = this.x;
-        gameState.takeDamage.y = this.y;
+        gameState.takeDamage.visible = true;
+        
         gameState.takeDamage.play('expload');
+        gameState.takeDamage.visible = false;
     }
 
     isStillTurn(){
