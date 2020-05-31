@@ -49,7 +49,7 @@ class Plane{
 
                     gameState.player.angle +=angularMomentum;  
                     i++;                    
-                    if (i < 100) {           
+                    if (i < 10) {           
                     myLoop();              
                     }                       
                 }, 10)
