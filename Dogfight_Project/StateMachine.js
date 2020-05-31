@@ -31,8 +31,13 @@ function StateMachine(State){
         if((gameState.enemy1_back.health <=0)&&(gameState.enemy2_back.health <=0)){
             gameOver = 1;
         }
-        State = 0;
+        State = 4;
         break;
+        case 4:
+            if (Phaser.Input.Keyboard.JustDown(gameState.n)) {
+                State = 0;
+            }
+            break;
 }
 
 if(gameOver){

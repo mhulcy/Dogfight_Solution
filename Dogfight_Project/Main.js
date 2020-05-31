@@ -151,7 +151,7 @@ function create() {
     gameState.throttleSetting = 1;
 
     gameState.spacebar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
-    gameState.n = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.78);
+    gameState.n = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.N);
 }
 
 function update() {
