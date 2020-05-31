@@ -178,18 +178,6 @@ function create() {
 }
 
 function update() {
-    if(!increment){
-        gameState.player_back.move(3, 3);
-        ++ increment;
-        gameState.enemy1_back.move(3,3);
-        gameState.enemy2_back.move(3,3);
-    }
-    if(gameState.player_back === 400){
-        console.log(gameState.player_back.y);
-        gameState.player_back.useWeapon();
-        console.log(gameState.enemy1_back.health);
-        console.log(gameState.enemy2_back.health);
-    }
     
     console.log(gameState.wheelSetting)
 
