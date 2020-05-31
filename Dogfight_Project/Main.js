@@ -159,12 +159,6 @@ function create() {
 
 function update() {
     
-    if(!increment){
-        gameState.player_back.move(3, 2);
-        ++ increment;
-        gameState.enemy1_back.move(3,2);
-        gameState.enemy2_back.move(3,4);
-    }
     State = StateMachine(State);
 
     if (gameState.wheel.angle < -54)
