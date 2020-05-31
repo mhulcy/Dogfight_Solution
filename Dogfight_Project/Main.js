@@ -118,7 +118,7 @@ function create() {
     gameState.player = this.add.container(500, 800, [this.add.sprite(0, 0, 'player').setScale(2), this.add.sprite(-5, -40, 'enemy gunfire', 0).setScale(.25), this.add.image(20, -50, 'arrow_speed1_position1').setScale(3).setVisible(false), this.add.image(20, -50, 'arrow_speed2_position1').setScale(3).setVisible(false), this.add.image(20, -50, 'arrow_speed3_position1').setScale(3).setVisible(false), this.add.image(0, -75, 'arrow_speed1_position2').setScale(.3).setVisible(false), this.add.image(0, -75, 'arrow_speed2_position2').setScale(.3).setVisible(false), this.add.image(0, -75, 'arrow_speed3_position2').setScale(.3).setVisible(false), this.add.image(0, -75, 'arrow_speed1_position3').setScale(.3).setVisible(false), this.add.image(0, -85, 'arrow_speed2_position3').setScale(.3).setVisible(false), this.add.image(0, -95, 'arrow_speed3_position3').setScale(.3).setVisible(false), this.add.image(0, -75, 'arrow_speed1_position4').setScale(.3).setVisible(false), this.add.image(0, -75, 'arrow_speed2_position4').setScale(.3).setVisible(false), this.add.image(0, -75, 'arrow_speed3_position4').setScale(.3).setVisible(false), this.add.image(-20, -50, 'arrow_speed1_position5').setScale(3).setVisible(false), this.add.image(-20, -50, 'arrow_speed2_position5').setScale(3).setVisible(false), this.add.image(-20, -50, 'arrow_speed3_position5').setScale(3).setVisible(false), this.add.sprite(0, 0, 'explosion', 0)]);
 
     gameState.player.list[1].play('shoot');
-    gameState.player.list[17].play('expload');
+    //gameState.player.list[17].play('expload');
     gameState.player_back = new Plane(500, 800, 0, 7, 3, 3);
     gameState.enemy1 = this.add.sprite(600, 100, 'enemy');
     gameState.enemy1_back = new bot(600, 100, 180, 5, 2, 2);
