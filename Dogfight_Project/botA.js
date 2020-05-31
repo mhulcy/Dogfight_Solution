@@ -1,10 +1,11 @@
 class botA{
-    constructor(x, y, angle, health, firePower) {
+    constructor(x, y, angle, health, attack, defense) {
         this.x =x;
         this.y = y;
         this.angle = angle;
         this.health = health;
-        this.firePower = firePower;
+        this.attack = attack;
+        this.defense = defense;
     }
     takeDamage(amount){
         this.health-= amount;

@@ -106,11 +106,11 @@ function create() {
 
     gameState.player.list[1].play('shoot');
     gameState.player.list[17].play('expload');
-    gameState.player_back = new Plane(500, 800, 0, 100, 20);
+    gameState.player_back = new Plane(500, 800, 0, 7, 3, 3);
     gameState.enemy1 = this.add.sprite(600, 100, 'enemy');
-    gameState.enemy1_back = new bot(600, 100, 180, 100, 20);
+    gameState.enemy1_back = new bot(600, 100, 180, 5, 2, 2);
     gameState.enemy2 = this.add.sprite(400, 100, 'enemy');
-    gameState.enemy2_back = new botA(400, 100, 180, 100, 20);
+    gameState.enemy2_back = new botA(400, 100, 180, 5, 2,2);
 
 
 
