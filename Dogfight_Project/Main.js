@@ -169,23 +169,25 @@ function create() {
 
 
     //setting for direction of move
-    gameState.wheel.setting = 3;
-    gameState.throttle.setting = 1;
+    gameState.wheelSetting = 3;
+    gameState.throttleSetting = 1;
 }
 
 function update() {
 
 
+    console.log(gameState.wheelSetting)
+    
     if (gameState.wheel.angle < -54)
-        gameState.wheel.setting = 1;
+        gameState.wheelSetting = 1;
     if (gameState.wheel.angle >= -54 && gameState.wheel.angle < -18)
-        gameState.wheel.setting = 2;
+        gameState.wheelSetting = 2;
     if (gameState.wheel.angle >= -18 && gameState.wheel.angle < 18)
-        gameState.wheel.setting = 3;
+        gameState.wheelSetting = 3;
     if (gameState.wheel.angle >= 18 && gameState.wheel.angle < 54)
-        gameState.wheel.setting = 4;
+        gameState.wheelSetting = 4;
     if (gameState.wheel.angle > 54)
-        gameState.wheel.setting = 5;
+        gameState.wheelSetting = 5;
     
     if (gameState.cursors.right.isDown) {
         if (gameState.wheel.angle < 90)
@@ -209,15 +211,279 @@ function update() {
     }
 
     if(gameState.throttle_button.y > 905){
-        gameState.throttle.setting = 1
+        gameState.throttleSetting = 1
     }
     if(gameState.throttle_button.y <= 905 && gameState.throttle_button.y >= 885){
-        gameState.throttle.setting = 2
+        gameState.throttleSetting = 2
     }
     if(gameState.throttle_button.y < 885){
-        gameState.throttle.setting = 3
+        gameState.throttleSetting = 3
+    }
 
-
+    if (gameState.wheelSetting === 1) {
+        if (gameState.throttleSetting === 1) {
+            gameState.arrow1_1.visible = true;
+            gameState.arrow2_1.visible = false;
+            gameState.arrow3_1.visible = false;
+            gameState.arrow1_2.visible = false;
+            gameState.arrow2_2.visible = false;
+            gameState.arrow3_2.visible = false;
+            gameState.arrow1_3.visible = false;
+            gameState.arrow2_3.visible = false;
+            gameState.arrow3_3.visible = false;
+            gameState.arrow1_4.visible = false;
+            gameState.arrow2_4.visible = false;
+            gameState.arrow3_4.visible = false;
+            gameState.arrow1_5.visible = false;
+            gameState.arrow2_5.visible = false;
+            gameState.arrow3_5.visible = false;
+        }
+        if (gameState.throttleSetting === 2) {
+            gameState.arrow1_1.visible = false;
+            gameState.arrow2_1.visible = true;
+            gameState.arrow3_1.visible = false;
+            gameState.arrow1_2.visible = false;
+            gameState.arrow2_2.visible = false;
+            gameState.arrow3_2.visible = false;
+            gameState.arrow1_3.visible = false;
+            gameState.arrow2_3.visible = false;
+            gameState.arrow3_3.visible = false;
+            gameState.arrow1_4.visible = false;
+            gameState.arrow2_4.visible = false;
+            gameState.arrow3_4.visible = false;
+            gameState.arrow1_5.visible = false;
+            gameState.arrow2_5.visible = false;
+            gameState.arrow3_5.visible = false;
+        }
+        if (gameState.throttleSetting === 3) {
+            gameState.arrow1_1.visible = false;
+            gameState.arrow2_1.visible = false;
+            gameState.arrow3_1.visible = true;
+            gameState.arrow1_2.visible = false;
+            gameState.arrow2_2.visible = false;
+            gameState.arrow3_2.visible = false;
+            gameState.arrow1_3.visible = false;
+            gameState.arrow2_3.visible = false;
+            gameState.arrow3_3.visible = false;
+            gameState.arrow1_4.visible = false;
+            gameState.arrow2_4.visible = false;
+            gameState.arrow3_4.visible = false;
+            gameState.arrow1_5.visible = false;
+            gameState.arrow2_5.visible = false;
+            gameState.arrow3_5.visible = false;
+        }
+    }
+    if (gameState.wheelSetting === 2) {
+        if (gameState.throttleSetting === 1) {
+            gameState.arrow1_1.visible = false;
+            gameState.arrow2_1.visible = false;
+            gameState.arrow3_1.visible = false;
+            gameState.arrow1_2.visible = true;
+            gameState.arrow2_2.visible = false;
+            gameState.arrow3_2.visible = false;
+            gameState.arrow1_3.visible = false;
+            gameState.arrow2_3.visible = false;
+            gameState.arrow3_3.visible = false;
+            gameState.arrow1_4.visible = false;
+            gameState.arrow2_4.visible = false;
+            gameState.arrow3_4.visible = false;
+            gameState.arrow1_5.visible = false;
+            gameState.arrow2_5.visible = false;
+            gameState.arrow3_5.visible = false;
+        }
+        if (gameState.throttleSetting === 2) {
+            gameState.arrow1_1.visible = false;
+            gameState.arrow2_1.visible = false;
+            gameState.arrow3_1.visible = false;
+            gameState.arrow1_2.visible = false;
+            gameState.arrow2_2.visible = true;
+            gameState.arrow3_2.visible = false;
+            gameState.arrow1_3.visible = false;
+            gameState.arrow2_3.visible = false;
+            gameState.arrow3_3.visible = false;
+            gameState.arrow1_4.visible = false;
+            gameState.arrow2_4.visible = false;
+            gameState.arrow3_4.visible = false;
+            gameState.arrow1_5.visible = false;
+            gameState.arrow2_5.visible = false;
+            gameState.arrow3_5.visible = false;
+        }
+        if (gameState.throttleSetting === 3) {
+            gameState.arrow1_1.visible = false;
+            gameState.arrow2_1.visible = false;
+            gameState.arrow3_1.visible = false;
+            gameState.arrow1_2.visible = false;
+            gameState.arrow2_2.visible = false;
+            gameState.arrow3_2.visible = true;
+            gameState.arrow1_3.visible = false;
+            gameState.arrow2_3.visible = false;
+            gameState.arrow3_3.visible = false;
+            gameState.arrow1_4.visible = false;
+            gameState.arrow2_4.visible = false;
+            gameState.arrow3_4.visible = false;
+            gameState.arrow1_5.visible = false;
+            gameState.arrow2_5.visible = false;
+            gameState.arrow3_5.visible = false;
+        }
+    }
+    if (gameState.wheelSetting === 3) {
+        if (gameState.throttleSetting === 1) {
+            gameState.arrow1_1.visible = false;
+            gameState.arrow2_1.visible = false;
+            gameState.arrow3_1.visible = false;
+            gameState.arrow1_2.visible = false;
+            gameState.arrow2_2.visible = false;
+            gameState.arrow3_2.visible = false;
+            gameState.arrow1_3.visible = true;
+            gameState.arrow2_3.visible = false;
+            gameState.arrow3_3.visible = false;
+            gameState.arrow1_4.visible = false;
+            gameState.arrow2_4.visible = false;
+            gameState.arrow3_4.visible = false;
+            gameState.arrow1_5.visible = false;
+            gameState.arrow2_5.visible = false;
+            gameState.arrow3_5.visible = false;
+        }
+        if (gameState.throttleSetting === 2) {
+            gameState.arrow1_1.visible = false;
+            gameState.arrow2_1.visible = false;
+            gameState.arrow3_1.visible = false;
+            gameState.arrow1_2.visible = false;
+            gameState.arrow2_2.visible = false;
+            gameState.arrow3_2.visible = false;
+            gameState.arrow1_3.visible = false;
+            gameState.arrow2_3.visible = true;
+            gameState.arrow3_3.visible = false;
+            gameState.arrow1_4.visible = false;
+            gameState.arrow2_4.visible = false;
+            gameState.arrow3_4.visible = false;
+            gameState.arrow1_5.visible = false;
+            gameState.arrow2_5.visible = false;
+            gameState.arrow3_5.visible = false;
+        }
+        if (gameState.throttleSetting === 3) {
+            gameState.arrow1_1.visible = false;
+            gameState.arrow2_1.visible = false;
+            gameState.arrow3_1.visible = false;
+            gameState.arrow1_2.visible = false;
+            gameState.arrow2_2.visible = false;
+            gameState.arrow3_2.visible = false;
+            gameState.arrow1_3.visible = false;
+            gameState.arrow2_3.visible = false;
+            gameState.arrow3_3.visible = true;
+            gameState.arrow1_4.visible = false;
+            gameState.arrow2_4.visible = false;
+            gameState.arrow3_4.visible = false;
+            gameState.arrow1_5.visible = false;
+            gameState.arrow2_5.visible = false;
+            gameState.arrow3_5.visible = false;
+        }
+    }
+    if (gameState.wheelSetting === 4) {
+        if (gameState.throttleSetting === 1) {
+            gameState.arrow1_1.visible = false;
+            gameState.arrow2_1.visible = false;
+            gameState.arrow3_1.visible = false;
+            gameState.arrow1_2.visible = false;
+            gameState.arrow2_2.visible = false;
+            gameState.arrow3_2.visible = false;
+            gameState.arrow1_3.visible = false;
+            gameState.arrow2_3.visible = false;
+            gameState.arrow3_3.visible = false;
+            gameState.arrow1_4.visible = true;
+            gameState.arrow2_4.visible = false;
+            gameState.arrow3_4.visible = false;
+            gameState.arrow1_5.visible = false;
+            gameState.arrow2_5.visible = false;
+            gameState.arrow3_5.visible = false;
+        }
+        if (gameState.throttleSetting === 2) {
+            gameState.arrow1_1.visible = false;
+            gameState.arrow2_1.visible = false;
+            gameState.arrow3_1.visible = false;
+            gameState.arrow1_2.visible = false;
+            gameState.arrow2_2.visible = false;
+            gameState.arrow3_2.visible = false;
+            gameState.arrow1_3.visible = false;
+            gameState.arrow2_3.visible = false;
+            gameState.arrow3_3.visible = false;
+            gameState.arrow1_4.visible = true;
+            gameState.arrow2_4.visible = false;
+            gameState.arrow3_4.visible = false;
+            gameState.arrow1_5.visible = false;
+            gameState.arrow2_5.visible = false;
+            gameState.arrow3_5.visible = false;
+        }
+        if (gameState.throttleSetting === 3) {
+            gameState.arrow1_1.visible = false;
+            gameState.arrow2_1.visible = false;
+            gameState.arrow3_1.visible = false;
+            gameState.arrow1_2.visible = false;
+            gameState.arrow2_2.visible = false;
+            gameState.arrow3_2.visible = false;
+            gameState.arrow1_3.visible = false;
+            gameState.arrow2_3.visible = false;
+            gameState.arrow3_3.visible = false;
+            gameState.arrow1_4.visible = false;
+            gameState.arrow2_4.visible = false;
+            gameState.arrow3_4.visible = true;
+            gameState.arrow1_5.visible = false;
+            gameState.arrow2_5.visible = false;
+            gameState.arrow3_5.visible = false;
+        }
+    }
+    if (gameState.wheelSetting === 5) {
+        if (gameState.throttleSetting === 1) {
+            gameState.arrow1_1.visible = false;
+            gameState.arrow2_1.visible = false;
+            gameState.arrow3_1.visible = false;
+            gameState.arrow1_2.visible = false;
+            gameState.arrow2_2.visible = false;
+            gameState.arrow3_2.visible = false;
+            gameState.arrow1_3.visible = false;
+            gameState.arrow2_3.visible = false;
+            gameState.arrow3_3.visible = false;
+            gameState.arrow1_4.visible = false;
+            gameState.arrow2_4.visible = false;
+            gameState.arrow3_4.visible = false;
+            gameState.arrow1_5.visible = true;
+            gameState.arrow2_5.visible = false;
+            gameState.arrow3_5.visible = false;
+        }
+        if (gameState.throttleSetting === 2) {
+            gameState.arrow1_1.visible = false;
+            gameState.arrow2_1.visible = false;
+            gameState.arrow3_1.visible = false;
+            gameState.arrow1_2.visible = false;
+            gameState.arrow2_2.visible = false;
+            gameState.arrow3_2.visible = false;
+            gameState.arrow1_3.visible = false;
+            gameState.arrow2_3.visible = false;
+            gameState.arrow3_3.visible = false;
+            gameState.arrow1_4.visible = false;
+            gameState.arrow2_4.visible = false;
+            gameState.arrow3_4.visible = false;
+            gameState.arrow1_5.visible = false;
+            gameState.arrow2_5.visible = true;
+            gameState.arrow3_5.visible = false;
+        }
+        if (gameState.throttleSetting === 3) {
+            gameState.arrow1_1.visible = false;
+            gameState.arrow2_1.visible = false;
+            gameState.arrow3_1.visible = false;
+            gameState.arrow1_2.visible = false;
+            gameState.arrow2_2.visible = false;
+            gameState.arrow3_2.visible = false;
+            gameState.arrow1_3.visible = false;
+            gameState.arrow2_3.visible = false;
+            gameState.arrow3_3.visible = false;
+            gameState.arrow1_4.visible = false;
+            gameState.arrow2_4.visible = false;
+            gameState.arrow3_4.visible = false;
+            gameState.arrow1_5.visible = false;
+            gameState.arrow2_5.visible = false;
+            gameState.arrow3_5.visible = true;
+        }
     }
 
 }
