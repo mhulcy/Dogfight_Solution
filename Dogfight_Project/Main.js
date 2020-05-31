@@ -149,7 +149,7 @@ function update() {
         gameState.enemy2_back.move(3,4);
     }
 
-   StateMachine();
+   State = StateMachine(State);
 
     if (gameState.wheel.angle < -54)
         gameState.wheelSetting = 1;

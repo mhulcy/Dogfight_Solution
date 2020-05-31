@@ -10,6 +10,17 @@ class Plane{
        takeDamage(damageReceived){
            this.health -= damageReceived;
     }
+
+    isStillTurn(){
+        let speed,wheel;
+        while(!ButtonPressed){
+            speed = gameState.throttleSetting;
+            wheel = gameState.wheelSetting;
+        }
+        let values = [speed, wheel];
+        return values;
+    }
+
         move(speed, wheelSetting){
             let num, angularMomentum;
             if(speed === 1){ num = 10; }
