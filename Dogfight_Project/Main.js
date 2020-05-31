@@ -17,9 +17,6 @@ var config = {
     
 };
 
-var State = 0;
-var stillTurn = true;
-var gameOver = false;
 var game = new Phaser.Game(config);
 
 function preload() {
@@ -32,7 +29,6 @@ function preload() {
 	this.load.image('enemy', 'images/JAP_a6m.png'); //comment
     this.load.image('cloud', 'images/anime-clouds-png-2-transparent.png');
     this.load.image('cloud1', 'images/anime-clouds-png-2-transparent.png');
-    this.load.image('cloud2', 'images/anime-clouds-png-2-transparent.png');
 	this.load.image('wheel', 'images/wheel.png');
 	this.load.image('background', 'images/pixel land.png');
 	this.load.image('cockpit', 'images/gray box.png');
@@ -53,7 +49,6 @@ function preload() {
     this.load.image('arrow_speed1_position5', 'images/Arrow_Speed1_Position5.png');
     this.load.image('arrow_speed2_position5', 'images/Arrow_Speed2_Position5.png');
     this.load.image('arrow_speed3_position5', 'images/Arrow_Speed3_Position5.png');
-    this.load.spritesheet('enemy gunfire', 'images/enemy_gunfire.png', {frameWidth: 111, framHeight: 50});
 }
 
 function create() {
@@ -61,38 +56,19 @@ function create() {
 
     gameState.cursors = this.input.keyboard.createCursorKeys();
 
-
 	var background = this.add.image(500, 500, 'background');
-    background.setScale(2.5);
-
-
-    //gameState.enemy_gunfire = this.add.sprite(500, 500, 'enemy gunfire', 0);
-
-
-    this.anims.create({
-        key: 'shoot',
-        repeat: -1,
-        frameRate: 10,
-        frames: this.anims.generateFrameNames('enemy gunfire', { start: 1, end: 3 })
-    })
-    
-
+	background.setScale(2.5);
 
     //var sfx = this.add.sound('Retro');
     //sfx.play();
     
 	gameState.cloud = this.add.image(250, 250, 'cloud');
-    gameState.cloud1 = this.add.image(750, 650, 'cloud');
-    gameState.cloud2 = this.add.image(100, 850, 'cloud');
+	gameState.cloud1 = this.add.image(750, 650, 'cloud');
 	gameState.cloud.setScale(.5);
     gameState.cloud1.setScale(.5);
-    gameState.cloud2.setScale(.5);
   
-    gameState.player = this.add.container(500, 800, [this.add.sprite(0, 0, 'player'), this.add.sprite(-5, -32, 'enemy gunfire', 0)]);
-    gameState.player.list[1].setScale(.25)
-    gameState.player.list[1].play('shoot');
-
-    gameState.player_back = new Plane(500, 800, 0, 100, 20);
+    gameState.player = this.add.sprite(600, 800, 'player');
+    gameState.player_back = new Plane(600, 800, 0, 100, 20);
     gameState.enemy1 = this.add.sprite(600, 100, 'enemy');
     gameState.enemy1_back = new bot(600, 100, 180, 100, 20);
     gameState.enemy2 = this.add.sprite(400, 100, 'enemy');
@@ -202,55 +178,20 @@ function create() {
 }
 
 function update() {
-    
     if(!increment){
-        gameState.player_back.move(3, 2);
+        gameState.player_back.move(3, 3);
         ++ increment;
-        gameState.enemy1_back.move(3,2);
-        gameState.enemy2_back.move(3,4);
+        gameState.enemy1_back.move(3,3);
+        gameState.enemy2_back.move(3,3);
     }
-<<<<<<< HEAD
-
-    switch(State){
-        case 0:    
-            while(!stillTurn  && !gameOver){
-                //if(!Plane.isStillTurn()){
-                    
-                //}
-                Plane;
-            }
-            //console.log('player');
-            State = 1;
-            break;
-        case 1:
-            while(!stillTurn && !gameOver){
-                //if(!Bot1.isStillTurn()){
-
-                //}
-                Plane;
-            }
-            //console.log('bot1');
-            State = 2;
-            break;
-        case 2:
-            while(!stillTurn && !gameOver){
-                //if(!Bot2.isStillTurn()){
-
-                //}
-                Plane;
-            }
-            //console.log('bot2');
-            State = 0;
-            break;
+    if(gameState.player_back === 400){
+        console.log(gameState.player_back.y);
+        gameState.player_back.useWeapon();
+        console.log(gameState.enemy1_back.health);
+        console.log(gameState.enemy2_back.health);
     }
-
-    if(gameOver){
-        
-    }
-=======
     
     console.log(gameState.wheelSetting)
->>>>>>> 91f1655149144a193be61171eb4a0ce2ce0f67ed
 
     if (gameState.wheel.angle < -54)
         gameState.wheelSetting = 1;
@@ -283,7 +224,6 @@ function update() {
             gameState.throttle_button.y -= 2
         }
     }
-
     if (gameState.throttle_button.y > 905) {
         gameState.throttleSetting = 1
     }
@@ -297,11 +237,7 @@ function update() {
     if(gameState.cloud.x >= -150){
         gameState.cloud.x -= 0.3;
     }else{
-<<<<<<< HEAD
-        gameState.cloud.y = Math.random() * 1000;
-=======
 	gameState.cloud.y = Math.random() * 1000;
->>>>>>> 91f1655149144a193be61171eb4a0ce2ce0f67ed
         gameState.cloud.x = 1150;
     }
 
@@ -310,13 +246,6 @@ function update() {
     }else{
         gameState.cloud1.y = Math.random() * 1000;
         gameState.cloud1.x = 1150;
-    }
-
-    if(gameState.cloud2.x >= -150){
-        gameState.cloud2.x -= 0.3;
-    }else{
-        gameState.cloud2.y = Math.random() * 1000;
-        gameState.cloud2.x = 1150;
     }
 
     if (gameState.wheelSetting === 1) {
