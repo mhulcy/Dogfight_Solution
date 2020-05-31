@@ -53,6 +53,7 @@ function preload() {
     this.load.image('arrow_speed1_position5', 'images/Arrow_Speed1_Position5.png');
     this.load.image('arrow_speed2_position5', 'images/Arrow_Speed2_Position5.png');
     this.load.image('arrow_speed3_position5', 'images/Arrow_Speed3_Position5.png');
+    this.load.spritesheet('enemy gunfire', 'images/enemy_gunfire.png', {frameWidth: 111, framHeight: 50});
 }
 
 function create() {
@@ -60,8 +61,22 @@ function create() {
 
     gameState.cursors = this.input.keyboard.createCursorKeys();
 
+
 	var background = this.add.image(500, 500, 'background');
-	background.setScale(2.5);
+    background.setScale(2.5);
+
+
+    //gameState.enemy_gunfire = this.add.sprite(500, 500, 'enemy gunfire', 0);
+
+
+    this.anims.create({
+        key: 'shoot',
+        repeat: -1,
+        frameRate: 10,
+        frames: this.anims.generateFrameNames('enemy gunfire', { start: 1, end: 3 })
+    })
+    
+
 
     //var sfx = this.add.sound('Retro');
     //sfx.play();
@@ -73,10 +88,16 @@ function create() {
     gameState.cloud1.setScale(.5);
     gameState.cloud2.setScale(.5);
   
-    gameState.player = this.add.sprite(500, 800, 'player');
+    gameState.player = this.add.container(500, 800, [this.add.sprite(0, 0, 'player'), this.add.sprite(-5, -32, 'enemy gunfire', 0)]);
+    gameState.player.list[1].setScale(.25)
+    gameState.player.list[1].play('shoot');
+
     gameState.player_back = new Plane(500, 800, 0, 100, 20);
     gameState.enemy1 = this.add.sprite(600, 100, 'enemy');
+    gameState.enemy1_back = new bot(600, 100, 180, 100, 20);
     gameState.enemy2 = this.add.sprite(400, 100, 'enemy');
+    gameState.enemy2_back = new botA(400, 100, 180, 100, 20);
+
 
     //arrows position 3
     gameState.arrow1_3 = this.add.image(535, 770, 'arrow_speed1_position3');
@@ -181,10 +202,14 @@ function create() {
 }
 
 function update() {
+    
     if(!increment){
         gameState.player_back.move(3, 2);
         ++ increment;
+        gameState.enemy1_back.move(3,2);
+        gameState.enemy2_back.move(3,4);
     }
+<<<<<<< HEAD
 
     switch(State){
         case 0:    
@@ -222,6 +247,10 @@ function update() {
     if(gameOver){
         
     }
+=======
+    
+    console.log(gameState.wheelSetting)
+>>>>>>> 91f1655149144a193be61171eb4a0ce2ce0f67ed
 
     if (gameState.wheel.angle < -54)
         gameState.wheelSetting = 1;
@@ -268,7 +297,11 @@ function update() {
     if(gameState.cloud.x >= -150){
         gameState.cloud.x -= 0.3;
     }else{
+<<<<<<< HEAD
         gameState.cloud.y = Math.random() * 1000;
+=======
+	gameState.cloud.y = Math.random() * 1000;
+>>>>>>> 91f1655149144a193be61171eb4a0ce2ce0f67ed
         gameState.cloud.x = 1150;
     }
 
@@ -551,55 +584,70 @@ function update() {
             gameState.arrow3_5.visible = true;
         }
     }
-    //gameState.player.y -= 1;
+    
 
     //arrow position 1
     gameState.arrow1_1.x = gameState.player.x + 30;
     gameState.arrow1_1.y = gameState.player.y - 20;
+    gameState.arrow1_1.angle = gameState.player.angle;
 
     gameState.arrow2_1.x = gameState.player.x + 30;
     gameState.arrow2_1.y = gameState.player.y - 35;
+    gameState.arrow2_1.angle = gameState.player.angle;
 
     gameState.arrow3_1.x = gameState.player.x + 30;
     gameState.arrow3_1.y = gameState.player.y - 50;
+    gameState.arrow3_1.angle = gameState.player.angle;
 
     //arrow position 2
     gameState.arrow1_2.x = gameState.player.x; 
     gameState.arrow1_2.y = gameState.player.y - 85;
+    gameState.arrow1_2.angle = gameState.player.angle;
 
     gameState.arrow2_2.x = gameState.player.x;
     gameState.arrow2_2.y = gameState.player.y - 100;
+    gameState.arrow2_2.angle = gameState.player.angle;
 
     gameState.arrow3_2.x = gameState.player.x;
     gameState.arrow3_2.y = gameState.player.y - 115;
+    gameState.arrow3_2.angle = gameState.player.angle;
     
     //arrow position 3
     gameState.arrow1_3.x = gameState.player.x 
     gameState.arrow1_3.y = gameState.player.y - 85
+    gameState.arrow1_3.angle = gameState.player.angle;
 
     gameState.arrow2_3.x = gameState.player.x
     gameState.arrow2_3.y = gameState.player.y - 100
+    gameState.arrow2_3.angle = gameState.player.angle;
 
     gameState.arrow3_3.x = gameState.player.x
     gameState.arrow3_3.y = gameState.player.y - 115
+    gameState.arrow3_3.angle = gameState.player.angle;
 
     //arrow position 4
     gameState.arrow1_4.x = gameState.player.x 
     gameState.arrow1_4.y = gameState.player.y - 85
+    gameState.arrow1_4.angle = gameState.player.angle;
 
     gameState.arrow2_4.x = gameState.player.x
     gameState.arrow2_4.y = gameState.player.y - 100
+    gameState.arrow2_4.angle = gameState.player.angle;
 
     gameState.arrow3_4.x = gameState.player.x
     gameState.arrow3_4.y = gameState.player.y - 115
+    gameState.arrow3_4.angle = gameState.player.angle;
 
     //arrow position 5
     gameState.arrow1_5.x = gameState.player.x - 30
     gameState.arrow1_5.y = gameState.player.y - 20
+    gameState.arrow1_5.angle = gameState.player.angle;
 
     gameState.arrow2_5.x = gameState.player.x - 30
     gameState.arrow2_5.y = gameState.player.y - 35
+    gameState.arrow2_5.angle = gameState.player.angle;
 
     gameState.arrow3_5.x = gameState.player.x - 30
     gameState.arrow3_5.y = gameState.player.y - 50
+    gameState.arrow3_5.angle = gameState.player.angle;
 }
