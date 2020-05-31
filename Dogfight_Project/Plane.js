@@ -26,13 +26,20 @@ class Plane{
             var i = 0;                   
                 function myLoop() {        
                 setTimeout(function() {   
-                    gameState.player.x+=num; 
+
+                gameState.player.x+=num*(Math.cos((gameState.player.angle - 90 )*(Math.PI/180))); 
+                    gameState.player.y-=num*(Math.sin((gameState.player.angle + 90)*(Math.PI/180))); 
+                 //   console.log(Math.cos(Math.PI));
+                    console.log(gameState.player.y);
+                    console.log(gameState.player.x);
+                    console.log(gameState.player.angle*(Math.PI/180));
+
                     gameState.player.angle +=angularMomentum;  
                     i++;                    
                     if (i < 10) {           
                     myLoop();              
                     }                       
-                }, 1)
+                }, 10)
                 }
 
                 myLoop();  
