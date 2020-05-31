@@ -215,7 +215,7 @@ function update() {
     }else{
         gameState.cloud1.y = Math.random() * 1000;
         gameState.cloud1.x = 1150;
-    }
+    }  
 
     if(gameState.cloud2.x >= -150){
         gameState.cloud2.x -= 0.3;
