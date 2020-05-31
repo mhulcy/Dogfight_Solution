@@ -107,32 +107,25 @@ function create() {
 
 	gameState.cockpit = this.add.image(100, 900, 'cockpit');
 	gameState.cockpit.setScale(.85);
-	gameState.cockpit.visible = false;
+	
 
 	gameState.wheel = this.add.sprite(75, 895, 'wheel');
 	gameState.wheel.setScale(.25);
-	gameState.wheel.visible = false;
+	
 
 	gameState.throttle = this.add.image(140, 900, 'throttle');
 	gameState.throttle.setScale(.9);
-	gameState.throttle.visible = false;
+	
 
 	gameState.throttle_button = this.add.image(142.5, 930, 'throttle_button');
 	gameState.throttle_button.setScale(.4);
-	gameState.throttle_button.visible = false
+	
     
-    gameState.player.setInteractive();
-    gameState.wheel.setInteractive();
+   
 
-    gameState.wheel.on('pointerdown', function () {
-    })
+  
 
-    gameState.player.on('pointerdown', function () {
-		gameState.wheel.visible = true;
-		gameState.cockpit.visible = true;
-		gameState.throttle.visible = true;
-		gameState.throttle_button.visible = true;
-    })
+ 
     //var wheel = this.add.image(800, 800, 'wheel');
 
 	
