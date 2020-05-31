@@ -405,8 +405,8 @@ function update() {
             gameState.arrow1_3.visible = false;
             gameState.arrow2_3.visible = false;
             gameState.arrow3_3.visible = false;
-            gameState.arrow1_4.visible = true;
-            gameState.arrow2_4.visible = false;
+            gameState.arrow1_4.visible = false;
+            gameState.arrow2_4.visible = true;
             gameState.arrow3_4.visible = false;
             gameState.arrow1_5.visible = false;
             gameState.arrow2_5.visible = false;
