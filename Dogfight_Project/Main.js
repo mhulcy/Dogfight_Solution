@@ -149,42 +149,7 @@ function update() {
         gameState.enemy2_back.move(3,4);
     }
 
-    switch(State){
-        case 0:    
-            while(!stillTurn  && !gameOver){
-                //if(!Plane.isStillTurn()){
-                    
-                //}
-                Plane;
-            }
-            //console.log('player');
-            State = 1;
-            break;
-        case 1:
-            while(!stillTurn && !gameOver){
-                //if(!Bot1.isStillTurn()){
-
-                //}
-                Plane;
-            }
-            //console.log('bot1');
-            State = 2;
-            break;
-        case 2:
-            while(!stillTurn && !gameOver){
-                //if(!Bot2.isStillTurn()){
-
-                //}
-                Plane;
-            }
-            //console.log('bot2');
-            State = 0;
-            break;
-    }
-
-    if(gameOver){
-        
-    }
+   StateMachine();
 
     if (gameState.wheel.angle < -54)
         gameState.wheelSetting = 1;

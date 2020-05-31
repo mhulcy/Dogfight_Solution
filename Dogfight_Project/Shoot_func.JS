@@ -81,8 +81,4 @@ case 315:
       return false;
   }
 
-<<<<<<< HEAD
   }
-=======
-  }
->>>>>>> 5642bfa62fd1cbac2d4cbff5d58b3e986ccd4153
