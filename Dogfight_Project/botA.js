@@ -9,9 +9,10 @@ class botA{
     }
     takeDamage(amount){
         this.health-= amount;
-        gameState.takeDamage.x = this.x;
-        gameState.takeDamage.y = this.y;
+        gameState.takeDamage.visible = true;
+        console.log('good');
         gameState.takeDamage.play('expload');
+        gameState.takeDamage.visible = false;
     }
 
     isStillTurn(){
@@ -125,7 +126,27 @@ class botA{
         
         if(Shoot(gameState.enemy2.x, gameState.enemy2.y, gameState.enemy2.angle, gameState.player.x, 
             gameState.player.y)){
-                gameState.player_back.takeDamage(this.firePower);
+                let dice1 = Math.random();
+                let dice2 = Math.random();
+                let damage, defense;
+                if(dice1 < .5){
+                    damage = 1;
+                }
+                else{
+                    damage = 2;
+                }
+
+                if(dice2 < .33){
+                    defense = 1;
+                }else if(dice2 > .66){
+                    defense = 2;
+                }
+                else{
+                    defense = 2;
+                }
+
+                damage -= this.defense;
+                gameState.player_back.takeDamage(damage);
             }
             
     }
