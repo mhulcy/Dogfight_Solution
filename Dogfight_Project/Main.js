@@ -70,7 +70,10 @@ function create() {
     gameState.player = this.add.sprite(500, 800, 'player');
     gameState.player_back = new Plane(500, 800, 0, 100, 20);
     gameState.enemy1 = this.add.sprite(600, 100, 'enemy');
+    gameState.enemy1_back = new bot(600, 100, 180, 100, 20);
     gameState.enemy2 = this.add.sprite(400, 100, 'enemy');
+    gameState.enemy2_back = new botA(400, 100, 180, 100, 20);
+
 
     //arrows position 3
     gameState.arrow1_3 = this.add.image(535, 770, 'arrow_speed1_position3');
@@ -178,8 +181,10 @@ function update() {
     if(!increment){
         gameState.player_back.move(3, 2);
         ++ increment;
+        gameState.enemy1_back.move(3,2);
+        gameState.enemy2_back.move(3,4);
     }
-
+    
     console.log(gameState.wheelSetting)
 
     if (gameState.wheel.angle < -54)
