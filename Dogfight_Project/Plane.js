@@ -20,29 +20,14 @@ class Plane{
             if(wheelSetting === 3){angularMomentum = 0;}
             if(wheelSetting === 4){angularMomentum =4.5;}
             if(wheelSetting === 5){angularMomentum =9;}
-<<<<<<< HEAD
-=======
             console.log('ran');
             
 
->>>>>>> 1fdc672288285bcbedc8ee1cc7c9e642aea5cf26
             var i = 0;                   
             function myLoop() {        
                 setTimeout(function() {   
 
                 gameState.player.x+=num*(Math.cos((gameState.player.angle - 90 )*(Math.PI/180))); 
-<<<<<<< HEAD
-                gameState.player.y-=num*(Math.sin((gameState.player.angle + 90)*(Math.PI/180))); 
-                 //   console.log(Math.cos(Math.PI));
-                console.log(gameState.player.y);
-                console.log(gameState.player.x);
-                console.log(gameState.player.angle*(Math.PI/180));
-                gameState.player.angle +=angularMomentum;  
-                i++;                    
-                if (i < 10) {           
-                myLoop();              
-                }                       
-=======
                  gameState.player.y-=num*(Math.sin((gameState.player.angle + 90)*(Math.PI/180))); 
                  //   console.log(Math.cos(Math.PI));
                  if(gameState.player.y > 1000){
@@ -67,7 +52,6 @@ class Plane{
                     if (i < 100) {           
                     myLoop();              
                     }                       
->>>>>>> 1fdc672288285bcbedc8ee1cc7c9e642aea5cf26
                 }, 10)
                 }
             myLoop();  
