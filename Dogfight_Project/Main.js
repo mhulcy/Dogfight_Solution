@@ -28,6 +28,7 @@ function preload() {
     this.load.image('player', 'images/US_p40.png');
 	this.load.image('enemy', 'images/JAP_a6m.png'); //comment
     this.load.image('cloud', 'images/anime-clouds-png-2-transparent.png');
+    this.load.image('cloud1', 'images/anime-clouds-png-2-transparent.png');
 	this.load.image('wheel', 'images/wheel.png');
 	this.load.image('background', 'images/pixel land.png');
 	this.load.image('cockpit', 'images/gray box.png');
@@ -60,11 +61,11 @@ function create() {
 
     //var sfx = this.add.sound('Retro');
     //sfx.play();
-
-	var cloud = this.add.image(250, 250, 'cloud');
-	var cloud = this.add.image(750, 650, 'cloud');
-	cloud.setScale(.5);
-
+    
+	gameState.cloud = this.add.image(250, 250, 'cloud');
+	gameState.cloud1 = this.add.image(750, 650, 'cloud');
+	gameState.cloud.setScale(.5);
+    gameState.cloud1.setScale(.5);
   
     gameState.player = this.add.sprite(500, 800, 'player');
     gameState.player_back = new Plane(500, 800, 0, 100, 20);
@@ -219,8 +220,19 @@ function update() {
     if (gameState.throttle_button.y < 885) {
         gameState.throttleSetting = 3
     }
-
     
+    if(gameState.cloud.x >= -150){
+        gameState.cloud.x -= 0.3;
+    }else{
+        gameState.cloud.x = 1150;
+    }
+
+    if(gameState.cloud1.x >= -150){
+        gameState.cloud1.x -= 0.3;
+    }else{
+        gameState.cloud1.x = 1150;
+    }
+
     if (gameState.wheelSetting === 1) {
         if (gameState.throttleSetting === 1) {
             gameState.arrow1_1.visible = true;
