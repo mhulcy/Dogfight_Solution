@@ -34,9 +34,12 @@ function StateMachine(State){
         State = 4;
         break;
         case 4:
+            gameState.pressN.visible = true;
             if (Phaser.Input.Keyboard.JustDown(gameState.n)) {
                 State = 0;
+                gameState.pressN.visible = false;
             }
+            
             break;
 }
 

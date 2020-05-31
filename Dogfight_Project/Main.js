@@ -53,6 +53,7 @@ function preload() {
     this.load.image('arrow_speed1_position5', 'images/Arrow_Speed1_Position5.png');
     this.load.image('arrow_speed2_position5', 'images/Arrow_Speed2_Position5.png');
     this.load.image('arrow_speed3_position5', 'images/Arrow_Speed3_Position5.png');
+    this.load.image('pressNtoadvance', 'images/pressNtoadvance.png');
     this.load.image('space_bar', 'images/spaceBar.png');
     this.load.spritesheet('enemy gunfire', 'images/enemy_gunfire.png', { frameWidth: 111, framHeight: 50 });
     this.load.spritesheet('explosion', 'images/explosionSprites.png', { frameWidth: 64, framHeight: 64 });
@@ -70,6 +71,8 @@ function create() {
     var space_bar = this.add.image(500, 900, 'space_bar').setScale(.25);
     //gameState.enemy_gunfire = this.add.sprite(500, 500, 'enemy gunfire', 0);
 
+    gameState.pressN = this.add.image(500, 85, 'pressNtoadvance').setScale(.4);
+    gameState.pressN.visible = false;
 
     this.anims.create({
         key: 'shoot',
