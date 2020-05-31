@@ -209,7 +209,6 @@ function update() {
         gameState.enemy1_back.move(3,2);
         gameState.enemy2_back.move(3,4);
     }
-<<<<<<< HEAD
 
     switch(State){
         case 0:    
@@ -247,10 +246,6 @@ function update() {
     if(gameOver){
         
     }
-=======
-    
-    console.log(gameState.wheelSetting)
->>>>>>> 91f1655149144a193be61171eb4a0ce2ce0f67ed
 
     if (gameState.wheel.angle < -54)
         gameState.wheelSetting = 1;
@@ -297,11 +292,7 @@ function update() {
     if(gameState.cloud.x >= -150){
         gameState.cloud.x -= 0.3;
     }else{
-<<<<<<< HEAD
         gameState.cloud.y = Math.random() * 1000;
-=======
-	gameState.cloud.y = Math.random() * 1000;
->>>>>>> 91f1655149144a193be61171eb4a0ce2ce0f67ed
         gameState.cloud.x = 1150;
     }
 
