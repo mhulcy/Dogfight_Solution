@@ -12,11 +12,15 @@ class Plane{
     }
 
     isStillTurn(){
-        let speed,wheel;
+        let speed = 0,wheel = 0;
         while(!ButtonPressed){
             speed = gameState.throttleSetting;
             wheel = gameState.wheelSetting;
+            if (gameState.cursors.space.isDown) {
+                ButtonPressed = true;
+            }
         }
+        ButtonPressed = false;
         let values = [speed, wheel];
         return values;
     }
@@ -25,15 +29,13 @@ class Plane{
             let num, angularMomentum;
             if(speed === 1){ num = 10; }
             if(speed === 2){ num = 15; }
-            if(speed === 3){ num = 40; }
+            if(speed === 3){ num = 20; }
             if(wheelSetting === 1){angularMomentum = -9; }
             if(wheelSetting === 2){angularMomentum = -4.5;}
             if(wheelSetting === 3){angularMomentum = 0;}
             if(wheelSetting === 4){angularMomentum =4.5;}
             if(wheelSetting === 5){angularMomentum =9;}
-            console.log('ran');
-            
-
+    
             var i = 0;                   
             function myLoop() {        
                 setTimeout(function() {   

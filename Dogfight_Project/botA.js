@@ -9,6 +9,12 @@ class botA{
     takeDamage(amount){
         this.health-= amount;
     }
+
+    isStillTurn(){
+        let values = [0,0];
+        return values;
+    }
+
     move(speed, wheelSetting){
         let num, angularMomentum;
         if(speed === 1){ num = 10; }

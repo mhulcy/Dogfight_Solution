@@ -1,6 +1,6 @@
 ﻿
 
-
+let ButtonPressed = false;
 let increment = 0;
 const gameState = {}
 
@@ -112,7 +112,7 @@ function create() {
 
 
     
-   // gameState.player.setScale(2);
+    // gameState.player.setScale(2);
     gameState.enemy1.setScale(2);
     gameState.enemy2.setScale(2);
 
@@ -159,8 +159,7 @@ function update() {
         gameState.enemy1_back.move(3,2);
         gameState.enemy2_back.move(3,4);
     }
-
-   State = StateMachine(State);
+    State = StateMachine(State);
 
     if (gameState.wheel.angle < -54)
         gameState.wheelSetting = 1;
@@ -492,9 +491,9 @@ function update() {
         }
     }
     
-    if (gameState.cursors.space.isDown) {
-
-    }
+    //if (gameState.cursors.space.isDown) {
+    //    ButtonPressed = true;
+    //}
     
 }
 

@@ -1,21 +1,25 @@
-
+let playerValues;
+let bot1Values;
+let bot2Values;
 function StateMachine(State){
     let gameOver = 0;
     switch(State){
     case 0: 
-        let playerValues = gameState.player_back.isStillTurn();
-        State = 1;
+        //playerValues = gameState.player_back.isStillTurn();
+        if (gameState.cursors.space.isDown) {
+            State = 1;
+        }
         break;
     case 1:
-        let bot1Values = gameState.enemy1_back.isStillTurn();
+        bot1Values = gameState.enemy1_back.isStillTurn();
         State = 2;
         break;
     case 2:
-        let bot2Values = gameState.enemy2_back.isStillTurn();
+        bot2Values = gameState.enemy2_back.isStillTurn();
         State = 3;
         break;
     case 3:
-        gameState.player_back.move(playerValues[0], playerValues[1]);
+        gameState.player_back.move(gameState.throttleSetting,gameState.wheelSetting);
         gameState.enemy1_back.move(bot1Values[0], bot1Values[1]);
         gameState.enemy2_back.move(bot2Values[0], bot2Values[1]);
         if(gameState.player_back.health <=0){
