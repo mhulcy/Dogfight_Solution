@@ -55,18 +55,18 @@ function preload() {
     this.load.image('arrow_speed3_position5', 'images/Arrow_Speed3_Position5.png');
     this.load.image('pressNtoadvance', 'images/pressNtoadvance.png');
     this.load.image('space_bar', 'images/spaceBar.png');
-    this.load.image('playerHealth7', 'images/playerHealth7.png');
-    this.load.image('playerHealth6', 'images/playerHealth6.png');
-    this.load.image('playerHealth5', 'images/playerHealth5.png');
-    this.load.image('playerHealth4', 'images/playerHealth4.png');
-    this.load.image('playerHealth3', 'images/playerHealth3.png');
-    this.load.image('playerHealth2', 'images/playerHealth2.png');
-    this.load.image('playerHealth1', 'images/playerHealth1.png');
-    this.load.image('botHealth5', 'images/botHealth5.png');
-    this.load.image('botHealth4', 'images/botHealth4.png');
-    this.load.image('botHealth3', 'images/botHealth3.png');
-    this.load.image('botHealth2', 'images/botHealth2.png');
-    this.load.image('botHealth1', 'images/botHealth1.png');
+    this.load.image('playerHealth7', 'images/-playerHealth7.png');
+    this.load.image('playerHealth6', 'images/-playerHealth6.png');
+    this.load.image('playerHealth5', 'images/-playerHealth5.png');
+    this.load.image('playerHealth4', 'images/-playerHealth4.png');
+    this.load.image('playerHealth3', 'images/-playerHealth3.png');
+    this.load.image('playerHealth2', 'images/-playerHealth2.png');
+    this.load.image('playerHealth1', 'images/-playerHealth1.png');
+    this.load.image('botHealth5', 'images/-botHealth5.png');
+    this.load.image('botHealth4', 'images/-botHealth4.png');
+    this.load.image('botHealth3', 'images/-botHealth3.png');
+    this.load.image('botHealth2', 'images/-botHealth2.png');
+    this.load.image('botHealth1', 'images/-botHealth1.png');
     this.load.spritesheet('enemy gunfire', 'images/enemy_gunfire.png', { frameWidth: 111, framHeight: 50 });
     this.load.spritesheet('explosion', 'images/explosionSprites.png', { frameWidth: 64, framHeight: 64 });
 }
@@ -113,7 +113,7 @@ function create() {
 	gameState.cloud.setScale(.5);
     gameState.cloud1.setScale(.5);
     gameState.cloud2.setScale(.5);
-  
+    
     gameState.player = this.add.container(500, 800, [this.add.sprite(0, 0, 'player').setScale(2), this.add.sprite(-5, -40, 'enemy gunfire', 0).setScale(.25), this.add.image(20, -50, 'arrow_speed1_position1').setScale(3).setVisible(false), this.add.image(20, -50, 'arrow_speed2_position1').setScale(3).setVisible(false), this.add.image(20, -50, 'arrow_speed3_position1').setScale(3).setVisible(false), this.add.image(0, -75, 'arrow_speed1_position2').setScale(.3).setVisible(false), this.add.image(0, -75, 'arrow_speed2_position2').setScale(.3).setVisible(false), this.add.image(0, -75, 'arrow_speed3_position2').setScale(.3).setVisible(false), this.add.image(0, -75, 'arrow_speed1_position3').setScale(.3).setVisible(false), this.add.image(0, -85, 'arrow_speed2_position3').setScale(.3).setVisible(false), this.add.image(0, -95, 'arrow_speed3_position3').setScale(.3).setVisible(false), this.add.image(0, -75, 'arrow_speed1_position4').setScale(.3).setVisible(false), this.add.image(0, -75, 'arrow_speed2_position4').setScale(.3).setVisible(false), this.add.image(0, -75, 'arrow_speed3_position4').setScale(.3).setVisible(false), this.add.image(-20, -50, 'arrow_speed1_position5').setScale(3).setVisible(false), this.add.image(-20, -50, 'arrow_speed2_position5').setScale(3).setVisible(false), this.add.image(-20, -50, 'arrow_speed3_position5').setScale(3).setVisible(false), this.add.sprite(0, 0, 'explosion', 0)]);
 
     gameState.player.list[1].play('shoot');
@@ -215,6 +215,8 @@ function update() {
         gameState.throttleSetting = 3
     }
     
+    //CLOUDS
+
     if(gameState.cloud.x >= -150){
         gameState.cloud.x -= 0.3;
     }else{
@@ -236,7 +238,25 @@ function update() {
         gameState.cloud2.x = 1150;
     }
 
+    //Health Bars 
     
+    if(gameState.player_back.health == 7){
+        console.log(gameState.player_back.x);
+        gameState.playerHealth7 = this.add.image(gameState.player_back.x, gameState.player_back.y - 50, 'playerHealth7');
+        gameState.playerHealth7.setScale(.5);
+    }else if(gameState.player_back.health == 6){
+        
+    }else if(gameState.player_back.health == 5){
+        
+    }else if(gameState.player_back.health == 4){
+        
+    }else if(gameState.player_back.health == 3){
+        
+    }else if(gameState.player_back.health == 2){
+        
+    }else if(gameState.player_back.health == 1){
+        
+    }
     if (gameState.wheelSetting === 1) {
         if (gameState.throttleSetting === 1) {
            gameState.player.list[2].visible = true;
