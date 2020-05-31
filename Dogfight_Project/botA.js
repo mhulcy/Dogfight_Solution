@@ -11,7 +11,64 @@ class botA{
     }
 
     isStillTurn(){
-        let values = [2,2];
+        let wheel = 2, speed = 3;
+        if(gameState.player.y  > this.y){
+            if((Math.abs(this.angle) <270) &&(Math.abs(this.angle)>90) ){
+                 wheel = Math.random();
+                if(wheel < .5){
+                    wheel = 1;
+                }
+                else{
+                    wheel = 5;
+                }
+            }
+        }
+        else if(gameState.player.y <this .y){
+            if(!(Math.abs(this.angle) <270) &&(Math.abs(this.angle)>90) ){
+                let wheel = Math.random();
+                if(wheel < .5){
+                    wheel = 1;
+                }
+                else{
+                    wheel = 5;
+                }
+            }
+
+        }
+        else{
+            let wheel = Math.random();
+                if(wheel < .2){
+                    wheel = 1;
+                }
+                else if(wheel < .4) {
+                    wheel = 2;
+                }
+                else if ( wheel < .6){
+                    wheel = 3;
+                }
+                else if(wheel < .8){
+                    wheel = 4;
+                }
+                else{
+                    wheel = 5;
+                }
+            }
+                speed = Math.random()
+                if(speed < .33){
+                    speed = 1;
+                }
+                else if(speed < .66){
+                    speed = 2;
+                }
+                else {
+                    speed = 3;
+                }
+        
+
+
+
+
+        let values = [speed,wheel];
         return values;
     }
 
@@ -59,6 +116,13 @@ class botA{
             }, 10)
             }
         myLoop();  
+    }
+    useWeapon(){
+        if(Shoot(this.x, this.y, this.angle, gameState.player.x, 
+            gameState.player.y)){
+                gameState.player_back.takeDamage(this.firePower);
+            }
+            
     }
 
 
