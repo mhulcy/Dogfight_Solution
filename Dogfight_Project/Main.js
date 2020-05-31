@@ -175,11 +175,8 @@ function create() {
 
 function update() {
     if(!increment){
-        gameState.player_back.move(3, 5);
+        gameState.player_back.move(3, 2);
         ++ increment;
-    }
-    if(gameState.player.angle === 90){
-        gameState.player_back.move(2,1);
     }
 
     console.log(gameState.wheelSetting)
