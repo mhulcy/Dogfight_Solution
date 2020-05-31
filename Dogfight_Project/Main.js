@@ -49,6 +49,7 @@ function preload() {
     this.load.image('arrow_speed1_position5', 'images/Arrow_Speed1_Position5.png');
     this.load.image('arrow_speed2_position5', 'images/Arrow_Speed2_Position5.png');
     this.load.image('arrow_speed3_position5', 'images/Arrow_Speed3_Position5.png');
+    this.load.spritesheet('enemy gunfire', 'images/enemy_gunfire.png', {frameWidth: 111, framHeight: 50});
 }
 
 function create() {
@@ -56,8 +57,22 @@ function create() {
 
     gameState.cursors = this.input.keyboard.createCursorKeys();
 
+
 	var background = this.add.image(500, 500, 'background');
-	background.setScale(2.5);
+    background.setScale(2.5);
+
+
+    //gameState.enemy_gunfire = this.add.sprite(500, 500, 'enemy gunfire', 0);
+
+
+    this.anims.create({
+        key: 'shoot',
+        repeat: -1,
+        frameRate: 10,
+        frames: this.anims.generateFrameNames('enemy gunfire', { start: 1, end: 3 })
+    })
+    
+
 
     //var sfx = this.add.sound('Retro');
     //sfx.play();
@@ -67,7 +82,10 @@ function create() {
 	gameState.cloud.setScale(.5);
     gameState.cloud1.setScale(.5);
   
-    gameState.player = this.add.sprite(500, 800, 'player');
+    gameState.player = this.add.container(500, 800, [this.add.sprite(0, 0, 'player'), this.add.sprite(-5, -32, 'enemy gunfire', 0)]);
+    gameState.player.list[1].setScale(.25)
+    gameState.player.list[1].play('shoot');
+
     gameState.player_back = new Plane(500, 800, 0, 100, 20);
     gameState.enemy1 = this.add.sprite(600, 100, 'enemy');
     gameState.enemy1_back = new bot(600, 100, 180, 100, 20);
@@ -178,6 +196,7 @@ function create() {
 }
 
 function update() {
+    
     if(!increment){
         gameState.player_back.move(3, 2);
         ++ increment;
