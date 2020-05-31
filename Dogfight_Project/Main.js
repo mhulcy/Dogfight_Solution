@@ -174,7 +174,13 @@ function create() {
 }
 
 function update() {
-
+    if(!increment){
+        gameState.player_back.move(3, 5);
+        ++ increment;
+    }
+    if(gameState.player.angle === 90){
+        gameState.player_back.move(2,1);
+    }
 
     console.log(gameState.wheelSetting)
 
@@ -510,23 +516,23 @@ function update() {
     
     //arrow position 3
     gameState.arrow1_3.x = gameState.player.x 
-    gameState.arrow1_3.y = gameState.player.y - 45
+    gameState.arrow1_3.y = gameState.player.y - 85
 
     gameState.arrow2_3.x = gameState.player.x
-    gameState.arrow2_3.y = gameState.player.y - 55
+    gameState.arrow2_3.y = gameState.player.y - 100
 
     gameState.arrow3_3.x = gameState.player.x
-    gameState.arrow3_3.y = gameState.player.y - 70
+    gameState.arrow3_3.y = gameState.player.y - 115
 
     //arrow position 4
-    gameState.arrow1_4.x = gameState.player.x - 30
-    gameState.arrow1_4.y = gameState.player.y - 20
+    gameState.arrow1_4.x = gameState.player.x 
+    gameState.arrow1_4.y = gameState.player.y - 85
 
-    gameState.arrow2_4.x = gameState.player.x - 30
-    gameState.arrow2_4.y = gameState.player.y - 35
+    gameState.arrow2_4.x = gameState.player.x
+    gameState.arrow2_4.y = gameState.player.y - 100
 
-    gameState.arrow3_4.x = gameState.player.x - 30
-    gameState.arrow3_4.y = gameState.player.y - 50
+    gameState.arrow3_4.x = gameState.player.x
+    gameState.arrow3_4.y = gameState.player.y - 115
 
     //arrow position 5
     gameState.arrow1_5.x = gameState.player.x - 30

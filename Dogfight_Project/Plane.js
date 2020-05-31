@@ -20,7 +20,7 @@ class Plane{
             if(wheelSetting === 3){angularMomentum = 0;}
             if(wheelSetting === 4){angularMomentum =4.5;}
             if(wheelSetting === 5){angularMomentum =9;}
-            
+            console.log('ran');
             
 
             var i = 0;                   
@@ -30,9 +30,9 @@ class Plane{
                 gameState.player.x+=num*(Math.cos((gameState.player.angle - 90 )*(Math.PI/180))); 
                     gameState.player.y-=num*(Math.sin((gameState.player.angle + 90)*(Math.PI/180))); 
                  //   console.log(Math.cos(Math.PI));
-                    console.log(gameState.player.y);
-                    console.log(gameState.player.x);
-                    console.log(gameState.player.angle*(Math.PI/180));
+                this.x = gameState.player.x;
+                this.y = gameState.player.y;
+                this.angle = gameState.player.angle;
 
                     gameState.player.angle +=angularMomentum;  
                     i++;                    
