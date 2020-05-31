@@ -8,7 +8,10 @@ class botA{
         this.defense = defense;
     }
     takeDamage(amount){
-        this.health-= amount;
+        this.health -= amount;
+        gameState.takeDamage.visible = true;
+        gameState.takeDamage.play('expload');
+        gameState.takeDamage.visible = false;
     }
 
     isStillTurn(){

@@ -10,7 +10,6 @@ class bot{
     takeDamage(amount){
         this.health -= amount;
         gameState.takeDamage.visible = true;
-        
         gameState.takeDamage.play('expload');
         gameState.takeDamage.visible = false;
     }
