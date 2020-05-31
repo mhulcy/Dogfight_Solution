@@ -10,7 +10,7 @@ class bot{
     takeDamage(amount){
         this.health -= amount;
         gameState.takeDamage.visible = true;
-        
+        console.log('good');
         gameState.takeDamage.play('expload');
         gameState.takeDamage.visible = false;
     }
@@ -125,7 +125,27 @@ class bot{
         
         if(Shoot(gameState.enemy1.x, gameState.enemy1.y, gameState.enemy1.angle, gameState.player.x, 
             gameState.player.y)){
-                gameState.player_back.takeDamage(this.firePower);
+                let dice1 = Math.random();
+                let dice2 = Math.random();
+                let damage, defense;
+                if(dice1 < .5){
+                    damage = 1;
+                }
+                else{
+                    damage = 2;
+                }
+
+                if(dice2 < .33){
+                    defense = 1;
+                }else if(dice2 > .66){
+                    defense = 2;
+                }
+                else{
+                    defense = 2;
+                }
+
+                damage -= this.defense;
+                gameState.player_back.takeDamage(damage);
             }
             
     }
