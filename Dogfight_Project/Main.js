@@ -89,8 +89,9 @@ function create() {
     })
 
     //var exp = this.add.sprite(0, 0, 'explosion', 0);
-    
 
+    gameState.takeDamage = this.add.sprite(0, 0, 'explosion', 0);
+    gameState.takeDamage.visible = false;
 
     //var sfx = this.add.sound('Retro');
     //sfx.play();
