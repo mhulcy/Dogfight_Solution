@@ -84,13 +84,13 @@ function create() {
 
     //arrows position 2
     gameState.arrow1_2 = this.add.image(535, 770, 'arrow_speed1_position2');
-    gameState.arrow1_2.setScale(4);
+    gameState.arrow1_2.setScale(.4);
     gameState.arrow1_2.visible = false;
     gameState.arrow2_2 = this.add.image(535, 770, 'arrow_speed2_position2');
-    gameState.arrow2_2.setScale(4);
+    gameState.arrow2_2.setScale(.4);
     gameState.arrow2_2.visible = false;
     gameState.arrow3_2 = this.add.image(535, 770, 'arrow_speed3_position2');
-    gameState.arrow3_2.setScale(4);
+    gameState.arrow3_2.setScale(.4);
     gameState.arrow3_2.visible = false;
 
     //arrows position 4
@@ -177,7 +177,7 @@ function update() {
 
 
     console.log(gameState.wheelSetting)
-    
+
     if (gameState.wheel.angle < -54)
         gameState.wheelSetting = 1;
     if (gameState.wheel.angle >= -54 && gameState.wheel.angle < -18)
@@ -188,7 +188,7 @@ function update() {
         gameState.wheelSetting = 4;
     if (gameState.wheel.angle > 54)
         gameState.wheelSetting = 5;
-    
+
     if (gameState.cursors.right.isDown) {
         if (gameState.wheel.angle < 90)
             gameState.wheel.angle += 2;
@@ -200,26 +200,27 @@ function update() {
     }
 
     if (gameState.cursors.down.isDown) {
-        if(gameState.throttle_button.y < 925){
+        if (gameState.throttle_button.y < 925) {
             gameState.throttle_button.y += 2
         }
-    }  
-    if(gameState.cursors.up.isDown){
-        if(gameState.throttle_button.y > 865){ 
-            gameState.throttle_button.y -= 2  
+    }
+    if (gameState.cursors.up.isDown) {
+        if (gameState.throttle_button.y > 865) {
+            gameState.throttle_button.y -= 2
         }
     }
 
-    if(gameState.throttle_button.y > 905){
+    if (gameState.throttle_button.y > 905) {
         gameState.throttleSetting = 1
     }
-    if(gameState.throttle_button.y <= 905 && gameState.throttle_button.y >= 885){
+    if (gameState.throttle_button.y <= 905 && gameState.throttle_button.y >= 885) {
         gameState.throttleSetting = 2
     }
-    if(gameState.throttle_button.y < 885){
+    if (gameState.throttle_button.y < 885) {
         gameState.throttleSetting = 3
     }
 
+    
     if (gameState.wheelSetting === 1) {
         if (gameState.throttleSetting === 1) {
             gameState.arrow1_1.visible = true;
@@ -485,5 +486,25 @@ function update() {
             gameState.arrow3_5.visible = true;
         }
     }
+    //gameState.player.y -= 1;
 
+    //arrow position 1
+    gameState.arrow1_1.x = gameState.player.x + 30;
+    gameState.arrow1_1.y = gameState.player.y - 20;
+
+    gameState.arrow2_1.x = gameState.player.x + 30;
+    gameState.arrow2_1.y = gameState.player.y - 35;
+
+    gameState.arrow3_1.x = gameState.player.x + 30;
+    gameState.arrow3_1.y = gameState.player.y - 50;
+
+    //arrow position 2
+    gameState.arrow1_2.x = gameState.player.x; 
+    gameState.arrow1_2.y = gameState.player.y - 45;
+
+    gameState.arrow2_2.x = gameState.player.x;
+    gameState.arrow2_2.y = gameState.player.y - 60;
+
+    gameState.arrow3_2.x = gameState.player.x;
+    gameState.arrow3_2.y = gameState.player.y - 75;
 }
