@@ -96,13 +96,13 @@ function create() {
 
     //arrows position 4
     gameState.arrow1_4 = this.add.image(468, 770, 'arrow_speed1_position4');
-    gameState.arrow1_4.setScale(4);
+    gameState.arrow1_4.setScale(.4);
     gameState.arrow1_4.visible = false;
     gameState.arrow2_4 = this.add.image(468, 770, 'arrow_speed2_position4');
-    gameState.arrow2_4.setScale(4);
+    gameState.arrow2_4.setScale(.4);
     gameState.arrow2_4.visible = false;
     gameState.arrow3_4 = this.add.image(468, 770, 'arrow_speed3_position4');
-    gameState.arrow3_4.setScale(4);
+    gameState.arrow3_4.setScale(.4);
     gameState.arrow3_4.visible = false;
 
     //arrows position 5
@@ -175,7 +175,10 @@ function create() {
 }
 
 function update() {
-
+    if(!increment){
+        gameState.player_back.move(3, 2);
+        ++ increment;
+    }
 
     console.log(gameState.wheelSetting)
 
@@ -420,8 +423,8 @@ function update() {
             gameState.arrow1_3.visible = false;
             gameState.arrow2_3.visible = false;
             gameState.arrow3_3.visible = false;
-            gameState.arrow1_4.visible = true;
-            gameState.arrow2_4.visible = false;
+            gameState.arrow1_4.visible = false;
+            gameState.arrow2_4.visible = true;
             gameState.arrow3_4.visible = false;
             gameState.arrow1_5.visible = false;
             gameState.arrow2_5.visible = false;
@@ -512,30 +515,33 @@ function update() {
 
     //arrow position 2
     gameState.arrow1_2.x = gameState.player.x; 
-    gameState.arrow1_2.y = gameState.player.y - 45;
+    gameState.arrow1_2.y = gameState.player.y - 85;
 
     gameState.arrow2_2.x = gameState.player.x;
-    gameState.arrow2_2.y = gameState.player.y - 60;   
+    gameState.arrow2_2.y = gameState.player.y - 100;
+
+    gameState.arrow3_2.x = gameState.player.x;
+    gameState.arrow3_2.y = gameState.player.y - 115;
     
     //arrow position 3
     gameState.arrow1_3.x = gameState.player.x 
-    gameState.arrow1_3.y = gameState.player.y - 45
+    gameState.arrow1_3.y = gameState.player.y - 85
 
     gameState.arrow2_3.x = gameState.player.x
-    gameState.arrow2_3.y = gameState.player.y - 55
+    gameState.arrow2_3.y = gameState.player.y - 100
 
     gameState.arrow3_3.x = gameState.player.x
-    gameState.arrow3_3.y = gameState.player.y - 70
+    gameState.arrow3_3.y = gameState.player.y - 115
 
     //arrow position 4
-    gameState.arrow1_4.x = gameState.player.x - 30
-    gameState.arrow1_4.y = gameState.player.y - 20
+    gameState.arrow1_4.x = gameState.player.x 
+    gameState.arrow1_4.y = gameState.player.y - 85
 
-    gameState.arrow2_4.x = gameState.player.x - 30
-    gameState.arrow2_4.y = gameState.player.y - 35
+    gameState.arrow2_4.x = gameState.player.x
+    gameState.arrow2_4.y = gameState.player.y - 100
 
-    gameState.arrow3_4.x = gameState.player.x - 30
-    gameState.arrow3_4.y = gameState.player.y - 50
+    gameState.arrow3_4.x = gameState.player.x
+    gameState.arrow3_4.y = gameState.player.y - 115
 
     //arrow position 5
     gameState.arrow1_5.x = gameState.player.x - 30
