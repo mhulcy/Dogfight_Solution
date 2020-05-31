@@ -111,7 +111,6 @@ class bot{
             this.x = gameState.enemy1.x;
             this.y = gameState.enemy1.y;
             this.angle = gameState.enemy1.angle;
-
                 gameState.enemy1.angle +=angularMomentum;  
                 i++;                    
                 if (i < 10) {           
@@ -122,7 +121,8 @@ class bot{
         myLoop();  
     }
     useWeapon(){
-        if(Shoot(this.x, this.y, this.angle, gameState.player.x, 
+        
+        if(Shoot(gameState.enemy1.x, gameState.enemy1.y, gameState.enemy1.angle, gameState.player.x, 
             gameState.player.y)){
                 gameState.player_back.takeDamage(this.firePower);
             }

@@ -8,10 +8,10 @@ class botA{
         this.defense = defense;
     }
     takeDamage(amount){
-        this.health -= amount;
-        gameState.takeDamage.visible = true;
+        this.health-= amount;
+        gameState.takeDamage.x = this.x;
+        gameState.takeDamage.y = this.y;
         gameState.takeDamage.play('expload');
-        gameState.takeDamage.visible = false;
     }
 
     isStillTurn(){
@@ -122,7 +122,8 @@ class botA{
         myLoop();  
     }
     useWeapon(){
-        if(Shoot(this.x, this.y, this.angle, gameState.player.x, 
+        
+        if(Shoot(gameState.enemy2.x, gameState.enemy2.y, gameState.enemy2.angle, gameState.player.x, 
             gameState.player.y)){
                 gameState.player_back.takeDamage(this.firePower);
             }
