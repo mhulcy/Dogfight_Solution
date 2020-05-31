@@ -59,7 +59,7 @@ case 315:
     break;
 }
  /* Calculate area of triangle ABC */
-  A = area (x1, y1, x2, y2, pointx, pointy); 
+  A = area (x1, y1, x2, y2, x, y); 
        
  /* Calculate area of triangle PBC */  
    A1 = area (x, y, x2, y2, pointx, pointy); 
@@ -68,7 +68,7 @@ case 315:
    A2 = area (x1, y1, x, y, pointx, pointy); 
  
  /* Calculate area of triangle PAB */   
-   A3 = area (x1, y1, x2, y2, x, y); 
+   A3 = area (x1, y1, x2, y2, pointx, pointy); 
  /* Check if sum of A1, A2 and A3 is same as A */
   if(Math.round(A) === Math.round(A1 + A2 + A3)){
       console.log('true');
@@ -76,6 +76,8 @@ case 315:
   }
   else{
       console.log('false');
+      console.log(A);
+      console.log(A1+A2+A3);
       return false;
   }
 

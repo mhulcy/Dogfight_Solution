@@ -67,9 +67,9 @@ function create() {
 	gameState.cloud.setScale(.5);
     gameState.cloud1.setScale(.5);
   
-    gameState.player = this.add.sprite(600, 800, 'player');
-    gameState.player_back = new Plane(600, 800, 0, 100, 20);
-    gameState.enemy1 = this.add.sprite(600, 100, 'enemy');
+    gameState.player = this.add.sprite(600, 600, 'player');
+    gameState.player_back = new Plane(600, 600, 0, 100, 20);
+    gameState.enemy1 = this.add.sprite(600, 500, 'enemy');
     gameState.enemy1_back = new bot(600, 100, 180, 100, 20);
     gameState.enemy2 = this.add.sprite(400, 100, 'enemy');
     gameState.enemy2_back = new botA(400, 100, 180, 100, 20);
@@ -178,7 +178,55 @@ function create() {
 }
 
 function update() {
-    
+    gameState.player_back.useWeapon();
+    console.log(gameState.enemy2_back.health);
+    console.log(gameState.enemy1_back.health)
+
+/*
+    if(!increment){
+        gameState.player_back.move(3, 2);
+        ++ increment;
+        gameState.enemy1_back.move(3,2);
+        gameState.enemy2_back.move(3,4);
+    }
+
+    switch(State){
+        case 0:    
+            while(!stillTurn  && !gameOver){
+              //  if(!Plane.isStillTurn()){
+                    
+                //}
+                Plane;
+            }
+            //console.log('player');
+            State = 1;
+            break;
+        case 1:
+            while(!stillTurn && !gameOver){
+                //if(!Bot1.isStillTurn()){
+
+                //}
+                Plane;
+            }
+            //console.log('bot1');
+            State = 2;
+            break;
+        case 2:
+            while(!stillTurn && !gameOver){
+                //if(!Bot2.isStillTurn()){
+
+                //}
+                Plane;
+            }
+            //console.log('bot2');
+            State = 0;
+            break;
+    }
+
+    if(gameOver){
+        
+    }
+    */
     console.log(gameState.wheelSetting)
 
     if (gameState.wheel.angle < -54)
