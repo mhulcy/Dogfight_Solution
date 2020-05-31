@@ -11,7 +11,7 @@ class botA{
     }
 
     isStillTurn(){
-        let values = [0,0];
+        let values = [2,2];
         return values;
     }
 
