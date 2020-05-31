@@ -72,12 +72,14 @@ case 315:
  /* Check if sum of A1, A2 and A3 is same as A */
   if(Math.round(A) === Math.round(A1 + A2 + A3)){
       console.log('true');
+      console.log(x);
+      console.log(y);
+      console.log(pointx);
+      console.log(pointy);
       return true;
   }
   else{
-      console.log('false');
-      console.log(A);
-      console.log(A1+A2+A3);
+    
       return false;
   }
 
