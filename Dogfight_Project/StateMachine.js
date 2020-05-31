@@ -6,9 +6,12 @@ function StateMachine(State){
     switch(State){
     case 0: 
         //playerValues = gameState.player_back.isStillTurn();
-        if (gameState.cursors.space.isDown) {
-            State = 1;
-        }
+
+            if (Phaser.Input.Keyboard.JustDown(gameState.spacebar)) {
+                State = 1;
+            }
+            
+        
         break;
     case 1:
         bot1Values = gameState.enemy1_back.isStillTurn();
@@ -28,8 +31,13 @@ function StateMachine(State){
         if((gameState.enemy1_back.health <=0)&&(gameState.enemy2_back.health <=0)){
             gameOver = 1;
         }
-        State = 0;
+        State = 4;
         break;
+        case 4:
+            if (Phaser.Input.Keyboard.JustDown(gameState.n)) {
+                State = 0;
+            }
+            break;
 }
 
 if(gameOver){

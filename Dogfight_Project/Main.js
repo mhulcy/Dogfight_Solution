@@ -149,6 +149,9 @@ function create() {
     //setting for direction of move
     gameState.wheelSetting = 3;
     gameState.throttleSetting = 1;
+
+    gameState.spacebar = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE);
+    gameState.n = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.N);
 }
 
 function update() {
