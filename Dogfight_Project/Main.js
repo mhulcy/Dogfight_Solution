@@ -55,6 +55,18 @@ function preload() {
     this.load.image('arrow_speed3_position5', 'images/Arrow_Speed3_Position5.png');
     this.load.image('pressNtoadvance', 'images/pressNtoadvance.png');
     this.load.image('space_bar', 'images/spaceBar.png');
+    this.load.image('playerHealth7', 'images/playerHealth7.png');
+    this.load.image('playerHealth6', 'images/playerHealth6.png');
+    this.load.image('playerHealth5', 'images/playerHealth5.png');
+    this.load.image('playerHealth4', 'images/playerHealth4.png');
+    this.load.image('playerHealth3', 'images/playerHealth3.png');
+    this.load.image('playerHealth2', 'images/playerHealth2.png');
+    this.load.image('playerHealth1', 'images/playerHealth1.png');
+    this.load.image('botHealth5', 'images/botHealth5.png');
+    this.load.image('botHealth4', 'images/botHealth4.png');
+    this.load.image('botHealth3', 'images/botHealth3.png');
+    this.load.image('botHealth2', 'images/botHealth2.png');
+    this.load.image('botHealth1', 'images/botHealth1.png');
     this.load.spritesheet('enemy gunfire', 'images/enemy_gunfire.png', { frameWidth: 111, framHeight: 50 });
     this.load.spritesheet('explosion', 'images/explosionSprites.png', { frameWidth: 64, framHeight: 64 });
 }
