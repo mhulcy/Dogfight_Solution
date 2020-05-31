@@ -95,13 +95,13 @@ function create() {
 
     //arrows position 4
     gameState.arrow1_4 = this.add.image(468, 770, 'arrow_speed1_position4');
-    gameState.arrow1_4.setScale(4);
+    gameState.arrow1_4.setScale(.4);
     gameState.arrow1_4.visible = false;
     gameState.arrow2_4 = this.add.image(468, 770, 'arrow_speed2_position4');
-    gameState.arrow2_4.setScale(4);
+    gameState.arrow2_4.setScale(.4);
     gameState.arrow2_4.visible = false;
     gameState.arrow3_4 = this.add.image(468, 770, 'arrow_speed3_position4');
-    gameState.arrow3_4.setScale(4);
+    gameState.arrow3_4.setScale(.4);
     gameState.arrow3_4.visible = false;
 
     //arrows position 5
