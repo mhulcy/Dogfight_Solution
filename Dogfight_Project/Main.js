@@ -65,8 +65,9 @@ function create() {
 	var cloud = this.add.image(750, 650, 'cloud');
 	cloud.setScale(.5);
 
-    gameState.player1 = new Plane(500, 800, 0, 100, 20);
+  
     gameState.player = this.add.sprite(500, 800, 'player');
+    gameState.player_back = new Plane(500, 800, 0, 100, 20);
     gameState.enemy1 = this.add.sprite(600, 100, 'enemy');
     gameState.enemy2 = this.add.sprite(400, 100, 'enemy');
 
@@ -173,18 +174,7 @@ function create() {
 }
 
 function update() {
-<<<<<<< HEAD
-if(increment === 0){
-  gameState.player1.move(2,4);
-  increment +=1;
-}
-    if (gameState.wheel.setting = 1) {
 
-    }
-=======
-
-    
->>>>>>> fa2335ad777b43c90e936ba9e2b16c8d35b88a34
 
     if (gameState.wheel.angle < -54)
         gameState.wheel.setting = 1;
