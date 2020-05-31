@@ -9,6 +9,9 @@ class Plane{
     }
        takeDamage(damageReceived){
            this.health -= damageReceived;
+           gameState.takeDamage.x = this.x;
+           gameState.takeDamage.y = this.y;
+           gameState.takeDamage.play('expload');
     }
 
     isStillTurn(){
@@ -59,6 +62,8 @@ class Plane{
                 this.x = gameState.player.x;
                 this.y = gameState.player.y;
                 this.angle = gameState.player.angle;
+                console.log(this.x);
+                console.log(this.y);
 
                     gameState.player.angle +=angularMomentum;  
                     i++;                    
@@ -70,11 +75,11 @@ class Plane{
             myLoop();  
         }
         useWeapon(){
-            if(Shoot(this.x, this.y, this.angle, gameState.enemy1.x, 
+            if(Shoot(gameState.player.x, gameState.y, gameState.player.angle, gameState.enemy1.x, 
                 gameState.enemy1.y)){
                     gameState.enemy1_back.takeDamage(this.firePower);
                 }
-                if(Shoot(this.x, this.y, this.angle, gameState.enemy2.x, 
+                if(Shoot(gameState.player.x, gameState.player.y, gameState.player.angle, gameState.enemy2.x, 
                     gameState.enemy2.y)){
                         gameState.enemy2_back.takeDamage(this.firePower);
                     }

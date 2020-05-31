@@ -34,6 +34,9 @@ function StateMachine(State){
         State = 4;
         break;
         case 4:
+            gameState.player_back.useWeapon();
+            gameState.enemy1_back.useWeapon();
+            gameState.enemy2_back.useWeapon();
             gameState.pressN.visible = true;
             if (Phaser.Input.Keyboard.JustDown(gameState.n)) {
                 State = 0;
